@@ -4,4 +4,5 @@
 
 This talk will explain what Carthage is and how to use it, then dive into the philosophy of ruthless simplicity that inspired the project. We’ll also compare and contrast Carthage with [CocoaPods](http://cocoapods.org), the original dependency manager for Cocoa. Finally, we’ll explore how Carthage is architected under-the-hood, and the benefits we’ve seen from writing it completely in Swift.
 
-_This talk will be given at the April 2 meeting of [SLUG](http://www.meetup.com/swift-language)._
+_This talk will be given at the [April
+2 meeting](http://www.meetup.com/swift-language/events/220485678/) of [SLUG](http://www.meetup.com/swift-language)._
