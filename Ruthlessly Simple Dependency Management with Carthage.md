@@ -37,11 +37,11 @@ Brainchild of:
 
 ---
 
-# “Ruthlessly simple”
+# Why not just use CocoaPods?
 
 ---
 
-# Why not just use CocoaPods?
+# “Ruthlessly simple”
 
 ---
 
