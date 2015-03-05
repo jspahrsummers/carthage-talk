@@ -55,6 +55,10 @@ Brainchild of:
 
 ---
 
+# CarthageKit
+
+---
+
 # Why is it written in Swift?
 
 ---
