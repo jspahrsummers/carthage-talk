@@ -47,11 +47,11 @@ Brainchild of:
 
 ---
 
-# How does it work under the hood?
+# Prebuilt binaries
 
 ---
 
-# Prebuilt binaries
+# How does it work behind the scenes?
 
 ---
 
