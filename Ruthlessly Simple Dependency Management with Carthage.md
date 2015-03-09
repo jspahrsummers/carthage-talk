@@ -50,9 +50,7 @@ you’re (comparatively) lucky and get a build failure.
 
 ---
 
-# Carthage origins
-
-Brainchild of:
+# A new dependency manager
 
 ![Me]()
 ![@robrix]()
@@ -60,8 +58,8 @@ Brainchild of:
 ![@keithduncan]()
 ![@alanjrogers]()
 
-^ So we wanted a tool that could solve this problem for us. Our team tends to
-disagree with CocoaPods’ philosophy, so that wasn't an option.
+^ So we wanted a tool that could solve this problem for us. Our team often
+disagrees with CocoaPods’ philosophy, so that wasn’t an option.
 
 ^ During one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new
 dependency manager for Cocoa might look like.
