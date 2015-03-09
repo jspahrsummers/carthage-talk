@@ -118,7 +118,7 @@ dependency manager for Cocoa might look like.
 
 ---
 
-# What is it?
+# What does Carthage do?
 
 ![Xcode from/to Carthage from/to Git]()
 
@@ -127,13 +127,20 @@ a constraint solver for resolving dependency versions.
 
 ---
 
+# What does Carthage do?
+
+1. Picks a compatible version of each dependency
+1. Checks out each dependency with Git
+1. Builds each dependency with Xcode
+1. Gives you built frameworks
+
+^ You can see from this list that Carthage integrates heavily with your standard
+tools. All that Carthage does on its own is find the right version, then tell Xcode
+and Git what to do.
+
+---
+
 # How do you use it?
-
-STEPSHERE
-
-^ We wanted a replacement for our manually-managed, excessively nested
-submodules. Carthage solves that problem by picking exactly one version of each
-dependency, building it, then giving you the built frameworks.
 
 ---
 
