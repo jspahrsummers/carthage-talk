@@ -50,6 +50,61 @@ you’re (comparatively) lucky and get a build failure.
 
 ---
 
+# Why not use CocoaPods?
+
+^ Although submodules are problematic in some ways, we also weren’t interested
+in using CocoaPods.
+
+---
+
+# Why not use CocoaPods?
+
+Podspecs
+
+^ As library authors, we were frustrated with CocoaPods’ requirement that we add
+podspecs for all of our projects. After all, this information already exists in
+Xcode and Git, so why should we duplicate it to another place?
+
+---
+
+# Why not use CocoaPods?
+
+Less control over integration
+
+^ As users, we were frustrated with CocoaPods’ control of the project setup
+process. We know how to set up Xcode projects, and the automated nature of it
+often took away our flexibility.
+
+^ Yet, if we were to disable that feature, we would be stuck manually adding and
+removing files as our dependencies get updated.
+
+---
+
+# Why not use CocoaPods?
+
+Requires a central authority
+
+^ CocoaPods Trunk is a central package management service, backed by a GitHub
+repository, that is responsible for serving up podspecs.
+
+^ We think a centralized list makes library authors’ jobs harder, because
+they’re now responsible for deploying releases to yet another place. It also
+makes it harder to use library versions that haven’t been recorded there, or to
+use libraries that don’t have any CocoaPods support at all!
+
+---
+
+# Why not use CocoaPods?
+
+Written in Ruby
+
+^ Even if we could’ve fixed the aforementioned issues, CocoaPods is written in
+Ruby. And while we could certainly learn enough Ruby to do something useful,
+it’s definitely an obstacle to contributing. We aren’t Ruby developers by trade,
+and our time is limited, so we wanted something easier to work on.
+
+---
+
 # A new dependency manager
 
 ![Me]()
@@ -58,10 +113,7 @@ you’re (comparatively) lucky and get a build failure.
 ![@keithduncan]()
 ![@alanjrogers]()
 
-^ So we wanted a tool that could solve this problem for us. Our team often
-disagrees with CocoaPods’ philosophy, so that wasn’t an option.
-
-^ During one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new
+^ So, during one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new
 dependency manager for Cocoa might look like.
 
 ---
@@ -71,14 +123,6 @@ dependency manager for Cocoa might look like.
 ---
 
 # How do you use it?
-
----
-
-# Why did we build it?
-
----
-
-# Why not just use CocoaPods?
 
 ---
 
