@@ -120,9 +120,20 @@ dependency manager for Cocoa might look like.
 
 # What is it?
 
+![Xcode from/to Carthage from/to Git]()
+
+^ Carthage can be thought of a simple coordinator between Xcode and Git, plus
+a constraint solver for resolving dependency versions.
+
 ---
 
 # How do you use it?
+
+STEPSHERE
+
+^ We wanted a replacement for our manually-managed, excessively nested
+submodules. Carthage solves that problem by picking exactly one version of each
+dependency, building it, then giving you the built frameworks.
 
 ---
 
