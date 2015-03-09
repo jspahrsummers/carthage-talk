@@ -142,6 +142,40 @@ and Git what to do.
 
 # How do you use it?
 
+^ So, how do you actually set up an application project with Carthage?
+
+---
+
+# Step 1: Create a Cartfile
+
+```
+CARTFILE EXAMPLE
+```
+
+^ TODO
+
+---
+
+# Step 2: Run Carthage
+
+```
+$ carthage update
+```
+
+```
+CARTHAGE UPDATE EXAMPLE OUTPUT
+```
+
+^ TODO
+
+---
+
+# Step 3: Link frameworks
+
+![screenshot of Link Frameworks build phase]()
+
+^ TODO
+
 ---
 
 # “Ruthlessly simple”
@@ -160,7 +194,7 @@ and Git what to do.
 
 ---
 
-# Why is it written in Swift?
+# Why is it written in Swift (and not Objective-C)?
 
 ---
 
