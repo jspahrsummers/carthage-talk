@@ -14,14 +14,10 @@
 		D0E2ACFD1AB0DB6100104C94 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0E2ACFC1AB0DB6100104C94 /* Images.xcassets */; };
 		D0E2AD001AB0DB6100104C94 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0E2ACFE1AB0DB6100104C94 /* LaunchScreen.xib */; };
 		D0E2AD0C1AB0DB6100104C94 /* CarthageDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E2AD0B1AB0DB6100104C94 /* CarthageDemoTests.m */; };
-		D0E2AD191AB0DCA200104C94 /* Archimedes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD151AB0DCA200104C94 /* Archimedes.framework */; };
-		D0E2AD1A1AB0DCA200104C94 /* Archimedes.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD151AB0DCA200104C94 /* Archimedes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D0E2AD1B1AB0DCA200104C94 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD161AB0DCA200104C94 /* Mantle.framework */; };
-		D0E2AD1C1AB0DCA200104C94 /* Mantle.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD161AB0DCA200104C94 /* Mantle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D0E2AD1D1AB0DCA200104C94 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD171AB0DCA200104C94 /* ReactiveCocoa.framework */; };
-		D0E2AD1E1AB0DCA200104C94 /* ReactiveCocoa.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD171AB0DCA200104C94 /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D0E2AD1F1AB0DCA200104C94 /* ReactiveCocoaLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD181AB0DCA200104C94 /* ReactiveCocoaLayout.framework */; };
-		D0E2AD201AB0DCA200104C94 /* ReactiveCocoaLayout.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD181AB0DCA200104C94 /* ReactiveCocoaLayout.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D0E2AD231AB0DDD300104C94 /* Archimedes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD151AB0DCA200104C94 /* Archimedes.framework */; };
+		D0E2AD241AB0DDD300104C94 /* Mantle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD161AB0DCA200104C94 /* Mantle.framework */; };
+		D0E2AD251AB0DDD300104C94 /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD171AB0DCA200104C94 /* ReactiveCocoa.framework */; };
+		D0E2AD261AB0DDD300104C94 /* ReactiveCocoaLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0E2AD181AB0DCA200104C94 /* ReactiveCocoaLayout.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,23 +29,6 @@
 			remoteInfo = CarthageDemo;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		D0E2AD211AB0DCA300104C94 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				D0E2AD1A1AB0DCA200104C94 /* Archimedes.framework in Embed Frameworks */,
-				D0E2AD1E1AB0DCA200104C94 /* ReactiveCocoa.framework in Embed Frameworks */,
-				D0E2AD1C1AB0DCA200104C94 /* Mantle.framework in Embed Frameworks */,
-				D0E2AD201AB0DCA200104C94 /* ReactiveCocoaLayout.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D0E2ACEC1AB0DB6100104C94 /* CarthageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarthageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,10 +55,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0E2AD191AB0DCA200104C94 /* Archimedes.framework in Frameworks */,
-				D0E2AD1D1AB0DCA200104C94 /* ReactiveCocoa.framework in Frameworks */,
-				D0E2AD1B1AB0DCA200104C94 /* Mantle.framework in Frameworks */,
-				D0E2AD1F1AB0DCA200104C94 /* ReactiveCocoaLayout.framework in Frameworks */,
+				D0E2AD231AB0DDD300104C94 /* Archimedes.framework in Frameworks */,
+				D0E2AD241AB0DDD300104C94 /* Mantle.framework in Frameworks */,
+				D0E2AD251AB0DDD300104C94 /* ReactiveCocoa.framework in Frameworks */,
+				D0E2AD261AB0DDD300104C94 /* ReactiveCocoaLayout.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +145,6 @@
 				D0E2ACE81AB0DB6100104C94 /* Sources */,
 				D0E2ACE91AB0DB6100104C94 /* Frameworks */,
 				D0E2ACEA1AB0DB6100104C94 /* Resources */,
-				D0E2AD211AB0DCA300104C94 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
