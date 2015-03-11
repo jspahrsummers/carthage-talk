@@ -178,6 +178,10 @@ CARTHAGE UPDATE EXAMPLE OUTPUT
 
 ---
 
+# Step 4: Strip architectures (iOS only)
+
+---
+
 # “Ruthlessly simple”
 
 ---
