@@ -302,7 +302,32 @@ lose when those tools change.
 
 ---
 
+TODO: Better transition here
+
+---
+
 # Prebuilt binaries
+
+```
+$ carthage update
+*** Fetching Mantle
+*** Fetching ReactiveCocoa
+*** Fetching ReactiveCocoaLayout
+*** Fetching Archimedes
+*** Downloading Archimedes at "1.1.4"
+*** Downloading Mantle at "1.5.4"
+*** Downloading ReactiveCocoa at "v2.4.7"
+*** Downloading ReactiveCocoaLayout at "0.5.2"
+```
+
+![screenshot of GitHub Releases for one of the projects]()
+
+^ You may have noticed earlier that Carthage didn’t actually _build_ the
+dependencies listed in the Cartfile. That’s because each one of these projects
+has Releases on GitHub with binaries attached.
+
+^ Whenever possible, Carthage will download binaries instead of building from
+scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%, from 9.5 minutes to about 3!
 
 ---
 
