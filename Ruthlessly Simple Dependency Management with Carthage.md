@@ -149,10 +149,13 @@ and Git what to do.
 # Step 1: Create a Cartfile
 
 ```
-CARTFILE EXAMPLE
+github "Mantle/Mantle" ~> 1.5
+github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 ```
 
-^ TODO
+^ Let’s set up a project that will use Mantle, ReactiveCocoa, and the less
+well-known ReactiveCocoaLayout. (Explain each line of the Cartfile.)
 
 ---
 
@@ -160,13 +163,23 @@ CARTFILE EXAMPLE
 
 ```
 $ carthage update
+*** Fetching Mantle
+*** Fetching ReactiveCocoa
+*** Fetching ReactiveCocoaLayout
+*** Fetching Archimedes
+*** Downloading Archimedes at "1.1.4"
+*** Downloading Mantle at "1.5.4"
+*** Downloading ReactiveCocoa at "v2.4.7"
+*** Downloading ReactiveCocoaLayout at "0.5.2"
+*** xcodebuild output can be found in /var/folders/t6/tjsdgjqd6j7_vjgb66qvwlb80000gn/T/carthage-xcodebuild.lisVLC.log
 ```
 
-```
-CARTHAGE UPDATE EXAMPLE OUTPUT
-```
+^ Then, we’ll run `carthage update` to download and install all the
+dependencies.
 
-^ TODO
+^ Notice that it pulled in Archimedes, which is a dependency of
+ReactiveCocoaLayout, and that it picked the newest compatible version of Mantle
+available.
 
 ---
 
