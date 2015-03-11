@@ -199,7 +199,16 @@ the “Linked Frameworks and Libraries” section of the app target.
 
 ^ Unfortunately, we're not quite done yet. Because of an App Store submission
 bug that disallows universal (fat) framework binaries, we need to add
-a special build phase that removes them.
+a special build phase that removes them. I’m hoping that Apple eventually makes
+this step unnecessary.
+
+---
+
+# That’s it!
+
+^ We now have an app that can begin using any and all of those frameworks, and
+it’s quite easy to update the list in the future by just running `carthage
+update` again.
 
 ---
 
