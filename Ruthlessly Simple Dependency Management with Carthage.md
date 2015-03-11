@@ -214,6 +214,92 @@ update` again.
 
 # “Ruthlessly simple”
 
+^ The prevailing design goal of Carthage, overriding almost all others, is that
+of “ruthless simplicity.” We want a tool that is as simple as possible, and will
+try very hard to avoid features that add significant complexity.
+
+---
+
+# Simple vs. Easy
+
+Easy: _familiar_ or _approachable_
+Simple: fewer concepts and concerns
+
+See Rich Hickey’s talk, “Simple Made Easy”
+
+^ Simple and easy are not the same thing.
+
+---
+
+# Simple vs. Easy
+
+CocoaPods is _easy_
+Carthage is _simple_
+
+^ CocoaPods is all about making it as easy as possible to find and use
+libraries, but it achieves those goals at the cost of complexity. It becomes
+easier but less simple.
+
+^ With Carthage, we really wanted to focus on simplicity, because we believe
+that the benefits are enormous. For example…
+
+---
+
+# Simpler tools are…
+
+Easier to maintain
+
+^ By keeping things simple, and our problem space small, we don’t need to handle
+as many edge cases. And by integrating with other tools, like Xcode and Git, we
+delegate responsibility and maintenance to them, so there’s less for Carthage to
+do.
+
+---
+
+# Simpler tools are…
+
+Easier to understand
+
+^ Simplicity makes it easier to understand how Carthage works and how to use it,
+because it helps users create a mental model of what’s going on. If something
+goes wrong (e.g., because of a bug), understanding the tool may help the user
+resolve the issue on their own.
+
+---
+
+# Simpler tools are…
+
+Easier to contribute to
+
+^ This is related to the previous points, but important in its own right. It’s
+a lot easier to implement fixes or new features within a simple codebase than
+a complex one.
+
+---
+
+# Simpler tools are…
+
+More flexible and composable
+
+^ It’s impossible for developers to predict all the possible ways that someone
+might want to use their software. So if there’s a use case out there that we’re
+not anticipating, it’s a lot easier for the user to bend a simpler tool to their
+will than to convince a complex tool to do exactly what they want.
+
+---
+
+# Simpler tools are…
+
+Automatically made better as their integration points get better
+
+^ In other words, for the parts where we hand off responsibility to Xcode and
+Git, we automatically benefit from improvements made to those tools, with little
+or no effort on our part.
+
+^ On the other hand, the more we try to duplicate their functionality (even in
+small amounts), the more fragile our system becomes, and the more we stand to
+lose when those tools change.
+
 ---
 
 # Prebuilt binaries
