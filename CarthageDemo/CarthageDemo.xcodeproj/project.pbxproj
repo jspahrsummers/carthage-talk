@@ -145,6 +145,7 @@
 				D0E2ACE81AB0DB6100104C94 /* Sources */,
 				D0E2ACE91AB0DB6100104C94 /* Frameworks */,
 				D0E2ACEA1AB0DB6100104C94 /* Resources */,
+				D0E2AD271AB0DDFE00104C94 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -229,6 +230,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D0E2AD271AB0DDFE00104C94 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Archimedes.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Mantle.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoa.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ReactiveCocoaLayout.framework",
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D0E2ACE81AB0DB6100104C94 /* Sources */ = {
