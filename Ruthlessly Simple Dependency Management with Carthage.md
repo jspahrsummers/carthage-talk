@@ -337,6 +337,13 @@ scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%,
 
 # CarthageKit
 
+^ Most of Carthage’s core behavior is actually implemented as a framework of its
+own, CarthageKit.
+
+^ This helps us provide modularity and makes testing easier, but it’s also
+intended to make Carthage integration easier. If you want to build a tool on top
+of Carthage, or compatible with Carthage, CarthageKit is your friend.
+
 ---
 
 # Why is it written in Swift (and not Objective-C)?
