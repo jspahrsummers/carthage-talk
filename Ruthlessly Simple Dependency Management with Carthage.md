@@ -183,11 +183,13 @@ available.
 
 ---
 
-# Step 3: Link frameworks
+# Step 3: Embed frameworks
 
-![screenshot of Link Frameworks build phase]()
+![screenshot of Carthage/Build/iOS]()
+![screenshot of Embedded Binaries settings]()
 
-^ TODO
+^ Now that we have built frameworks on disk, we simply need to drag them into
+the “Embedded Binaries” section of the app target.
 
 ---
 
