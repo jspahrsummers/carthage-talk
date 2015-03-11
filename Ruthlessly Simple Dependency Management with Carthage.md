@@ -351,3 +351,13 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 ---
 
 # Why does it use ReactiveCocoa?
+
+---
+
+TODO: Conclusion
+
+---
+
+# Questions?
+
+Thanks to: TODO
