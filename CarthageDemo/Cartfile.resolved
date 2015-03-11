@@ -1,0 +1,4 @@
+github "github/Archimedes" "1.1.4"
+github "Mantle/Mantle" "1.5.4"
+github "ReactiveCocoa/ReactiveCocoa" "v2.4.7"
+github "ReactiveCocoa/ReactiveCocoaLayout" "0.5.2"
