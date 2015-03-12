@@ -430,6 +430,13 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 
 # Why does it use ReactiveCocoa?
 
+* Simplifies the invocation of shell tasks (see ReactiveTask)
+* Simplifies networking (e.g., the GitHub API)
+* Simplifies the dependency resolution algorithm
+* Needed a real world application of RAC’s Swift API
+
+^ (Explain each.)
+
 ---
 
 TODO: Conclusion
