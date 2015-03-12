@@ -418,6 +418,14 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 
 # Why is it written in Swift (and not Objective-C)?
 
+* Type safety
+* Value types (especially enums)
+* Much faster to write
+* Better modularization
+* Desire to write a complete app using The Next Big Thing
+
+^ (Explain each.)
+
 ---
 
 # Why does it use ReactiveCocoa?
