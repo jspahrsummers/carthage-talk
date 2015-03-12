@@ -333,6 +333,76 @@ scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%,
 
 # How does it work behind the scenes?
 
+`carthage update` proceeds through the following steps:
+
+1. Parse the Cartfile
+1. Resolve the dependency graph
+1. Download and check out all dependencies
+1. Build any dependencies that don’t have binaries
+
+^ Let’s dive into each one.
+
+---
+
+# Parsing the Cartfile
+
+1. Parse OGDL
+1. Break down into a list of dependencies
+1. Determine the type of dependency (`github` or `git`)
+1. Parse any version constraint
+
+^ Carthage files are written in a subset of OGDL, the Ordered Graph Data
+Language. Originally, the logic for parsing our subset was written using
+NSScanner, but we’re now moving to a more complete parser called ogdl-swift.
+
+^ (Explain remaining steps.)
+
+---
+
+# Resolving the dependency graph
+
+1. Propose a graph using the latest allowed version for all dependencies
+1. Incorporate any Cartfiles for those dependencies (at those versions!) into the graph
+1. If the graph is no longer valid, throw it out and try with the next possible version
+1. Rinse and repeat until a valid graph is found
+
+^ This is highly inefficient in terms of algorithmic complexity, but performs
+surprisingly well in practice. Part of it is because our resolution algorithm
+throws out graphs the moment they become invalid, and part of it is because our
+resolution algorithm automatically terminates upon finding the first valid
+solution.
+
+---
+
+# Downloading a dependency
+
+1. Check GitHub Releases for the tag we’re interested in
+    1. If a GitHub Release exists with an attached zip file, download the zip
+    1. If the zip contains a framework, copy that into the Carthage/Build folder
+1. Otherwise, fetch the repository into a global Carthage cache
+1. Run a modified `git checkout` to copy the repository (at its correct version)
+into the Carthage/Checkouts folder
+
+^ There’s some more complexity here in practice (for example, handling
+submodules), but this is the way to think about the workflow.
+
+---
+
+# Building a dependency
+
+1. Symlink the Carthage/Build folder from the application project into the
+dependency’s folder
+1. Run `xcodebuild -list` on the rootmost `xcodeproj` to find shared schemes
+1. Filter out any schemes which do not build a dynamic framework
+1. Find the rootmost `xcodeproj` _or_ `xcworkspace`, which will be used for
+building
+1. For each scheme, build for each of the platforms it supports
+1. If we built multiple architectures, use `lipo` to combine them into
+a universal framework
+1. Copy the final build products into the shared Carthage/Build folder
+
+^ And we’re done!
+
 ---
 
 # CarthageKit
