@@ -132,7 +132,7 @@ a constraint solver for resolving dependency versions.
 1. Picks a compatible version of each dependency
 1. Checks out each dependency with Git
 1. Builds each dependency with Xcode
-1. Gives you built frameworks
+1. Gives you ready-to-use framework binaries
 
 ^ You can see from this list that Carthage integrates heavily with your standard
 tools. All that Carthage does on its own is find the right version, then tell Xcode
