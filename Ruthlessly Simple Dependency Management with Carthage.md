@@ -217,9 +217,12 @@ update` again.
 
 # “Ruthlessly simple”
 
-^ The prevailing design goal of Carthage, overriding almost all others, is that
-of “ruthless simplicity.” We want a tool that is as simple as possible, and will
-try very hard to avoid features that add significant complexity.
+^ These steps, and even the little bit of manual work at the end, hint at the
+philosophy behind Carthage.
+
+^ The prevailing design goal, overriding almost all others, is “ruthless
+simplicity.” We want a tool that is as simple as possible, and will try very
+hard to avoid features that add significant complexity.
 
 ---
 
