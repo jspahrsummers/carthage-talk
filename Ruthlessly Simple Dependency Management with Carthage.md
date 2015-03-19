@@ -29,6 +29,10 @@ several other open source libraries.
 
 ---
 
+# [fit] The Problem
+
+---
+
 > GitHub for Mac has what could be called “excessively nested submodules.”
 --Me, late 2014
 
@@ -40,9 +44,7 @@ dependencies have a shared dependency on something else.
 
 ---
 
-# The problem
-
-![dependency graph for RAC and Mantle]()
+![original fit](Resources/dependency-graph.pdf)
 
 ^ In our case, we used ReactiveCocoa and Mantle within several of our other
 libraries. Because the app must ultimately pick one version of RAC to link,

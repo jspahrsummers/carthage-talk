@@ -1,0 +1,15 @@
+digraph dependencygraph {
+    bgcolor=transparent;
+
+    center=1;
+    node [shape=box, style=rounded, color=white, fontcolor=white, height=0.5, fontsize=18, fontname=Helvetica];
+    edge [color=white];
+
+    Application -> Mantle;
+    Application -> Squirrel -> Mantle;
+    Application -> OctoKit -> ReactiveCocoa;
+    Application -> ReactiveCocoa;
+    Application -> ReactiveViewModel -> ReactiveCocoa;
+    OctoKit -> Mantle;
+    Squirrel -> ReactiveCocoa;
+}
