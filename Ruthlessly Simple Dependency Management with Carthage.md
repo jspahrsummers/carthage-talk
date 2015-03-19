@@ -18,15 +18,14 @@ talk with those answers.
 
 ---
 
-# About me
+# [fit] Justin Spahr-Summers
+# @jspahrsummers
 
-![Me]()
-![GitHub]()
+![inline fit](Resources/me.jpg) ![inline fit](Resources/octocat.png) ![inline fit](Resources/mantle-logo.png) ![inline fit](Resources/reactivecocoa-logo.png)
 
-![Projects I’ve worked on]()
-
-^ I’m a desktop developer at GitHub, primarily working on GitHub for Mac. You
-may have used one of these open source projects that I’ve worked on.
+^ I’m a desktop developer at GitHub, primarily working on GitHub for Mac.
+Besides Carthage, I’ve also played a major role in Mantle and ReactiveCocoa, and
+several other open source libraries.
 
 ---
 
