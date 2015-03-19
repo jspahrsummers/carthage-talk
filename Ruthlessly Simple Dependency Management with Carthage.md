@@ -29,12 +29,10 @@ several other open source libraries.
 
 ---
 
-# The problem
-
 > GitHub for Mac has what could be called “excessively nested submodules.”
 --Me, late 2014
 
-![submodule list https://gist.github.com/jspahrsummers/e3caf1150db086ecdce4]()
+![](Resources/nested-submodules.png)
 
 ^ For the longest time, GitHub for Mac imported dependencies exclusively through
 Git submodules and Xcode subprojects. This works pretty well until your
