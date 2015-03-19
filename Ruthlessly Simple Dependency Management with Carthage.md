@@ -110,13 +110,10 @@ and our time is limited, so we wanted something easier to work on.
 
 ---
 
-# A new dependency manager
-
-![Me]()
-![@robrix]()
-![@mdiep]()
-![@keithduncan]()
-![@alanjrogers]()
+# @robrix
+# @mdiep
+# @keithduncan
+# @alanjrogers
 
 ^ So, during one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new
 dependency manager for Cocoa might look like.
