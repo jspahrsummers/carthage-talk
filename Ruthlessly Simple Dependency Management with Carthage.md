@@ -8,7 +8,10 @@
 add frameworks to your Cocoa project.
 
 ^ In this talk, I’ll explain exactly what Carthage is, how to use it, _why_ it exists,
-and then go into some of the inner workings as well.
+and then go into some of the inner workings as well. If you’ve been interested
+in Carthage, but not sure how to get started, or have wanted to know why we
+didn’t just use and contribute to CocoaPods, I hope you’ll walk away from this
+talk with those answers.
 
 ---
 
