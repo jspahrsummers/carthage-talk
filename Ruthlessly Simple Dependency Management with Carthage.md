@@ -3,7 +3,7 @@
 ## with
 # [fit] Carthage
 
-![fit](Resources/carthage-logo.png)
+![fit](Resources/carthage-logo-gray.png)
 
 ^ (logo by Reda Lemeden)
 
@@ -120,11 +120,15 @@ dependency manager for Cocoa might look like.
 
 ---
 
-# What does Carthage do?
+# [fit] 
+# [fit]
+# [fit]
+# [fit]
+# [fit] ![inline fit](Resources/xcode.png) ⇄ ![inline fit](Resources/carthage-logo-colored.png) ⇆ ![inline fit](Resources/git-logo.png)
 
-![Xcode from/to Carthage from/to Git]()
+>
 
-^ Carthage can be thought of a simple coordinator between Xcode and Git, plus
+^ Mostly, we wanted a simple coordinator between Xcode and Git, plus
 a constraint solver for resolving dependency versions.
 
 ---
