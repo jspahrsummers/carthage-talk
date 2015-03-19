@@ -308,35 +308,6 @@ lose when those tools change.
 
 ---
 
-TODO: Better transition here
-
----
-
-# Prebuilt binaries
-
-```
-$ carthage update
-*** Fetching Mantle
-*** Fetching ReactiveCocoa
-*** Fetching ReactiveCocoaLayout
-*** Fetching Archimedes
-*** Downloading Archimedes at "1.1.4"
-*** Downloading Mantle at "1.5.4"
-*** Downloading ReactiveCocoa at "v2.4.7"
-*** Downloading ReactiveCocoaLayout at "0.5.2"
-```
-
-![screenshot of GitHub Releases for one of the projects]()
-
-^ You may have noticed earlier that Carthage didn’t actually _build_ the
-dependencies listed in the Cartfile. That’s because each one of these projects
-has Releases on GitHub with binaries attached.
-
-^ Whenever possible, Carthage will download binaries instead of building from
-scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%, from 9.5 minutes to about 3!
-
----
-
 # How does it work behind the scenes?
 
 `carthage update` proceeds through the following steps:
@@ -344,9 +315,11 @@ scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%,
 1. Parse the Cartfile
 1. Resolve the dependency graph
 1. Download and check out all dependencies
-1. Build any dependencies that don’t have binaries
+1. Build all dependencies
 
-^ Let’s dive into each one.
+^ Now, onto the mechanics of how it works!
+
+^ Let’s dive into each step.
 
 ---
 
@@ -382,14 +355,10 @@ solution.
 
 # Downloading a dependency
 
-1. Check GitHub Releases for the tag we’re interested in
-    1. If a GitHub Release exists with an attached zip file, download the zip
-    1. If the zip contains a framework, copy that into the Carthage/Build folder
-1. Otherwise, fetch the repository into a global Carthage cache
-1. Run a modified `git checkout` to copy the repository (at its correct version)
-into the Carthage/Checkouts folder
+1. Fetch the repository into a global Carthage cache
+1. Run a modified `git checkout` to copy the right version of the repository into Carthage/Checkouts
 
-^ There’s some more complexity here in practice (for example, handling
+^ There’s some more complexity here in practice (for example, dealing with
 submodules), but this is the way to think about the workflow.
 
 ---
@@ -408,6 +377,32 @@ a universal framework
 1. Copy the final build products into the shared Carthage/Build folder
 
 ^ And we’re done!
+
+---
+
+# Bonus: prebuilt binaries!
+
+```
+$ carthage update
+*** Fetching Mantle
+*** Fetching ReactiveCocoa
+*** Fetching ReactiveCocoaLayout
+*** Fetching Archimedes
+*** Downloading Archimedes at "1.1.4"
+*** Downloading Mantle at "1.5.4"
+*** Downloading ReactiveCocoa at "v2.4.7"
+*** Downloading ReactiveCocoaLayout at "0.5.2"
+```
+
+![screenshot of GitHub Releases for one of the projects]()
+
+^ You may have noticed earlier that Carthage didn’t actually _build_ the
+dependencies listed in the Cartfile. That’s because each one of these projects
+has Releases on GitHub with binaries attached.
+
+^ Whenever possible, Carthage will download binaries instead of building from
+scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%,
+from 9.5 minutes to about 3!
 
 ---
 
