@@ -1,8 +1,11 @@
-# Ruthlessly Simple Dependency Management with Carthage
+# [fit] Ruthlessly Simple
+# [fit] Dependency Management
+## with
+# [fit] Carthage
 
-![Carthage logo]()
+![fit](Resources/carthage-logo.png)
 
-(logo by Reda Lemeden)
+^ (logo by Reda Lemeden)
 
 ^ Carthage is a decentralized dependency manager, intended to be simplest way to
 add frameworks to your Cocoa project.
