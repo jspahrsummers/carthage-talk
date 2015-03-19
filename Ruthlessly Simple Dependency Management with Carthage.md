@@ -440,7 +440,19 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 
 ---
 
-TODO: Conclusion
+# 1.0
+
+1. Per-project settings
+1. CarthageKit API review
+1. CLI parameter review
+1. Profit!!! 💸
+
+^ I'd like to finish by talking about why Carthage isn't at 1.0 yet, and what it
+will take to get there. (Talk about each item.)
+
+^ 1.0 is really important to me, because it makes Carthage "real." We have an
+0.7 release to do, and then 1.0 is up right after that, so it shouldn’t be too
+long now. Keep an eye out!
 
 ---
 
