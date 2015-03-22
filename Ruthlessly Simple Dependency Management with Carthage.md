@@ -311,7 +311,7 @@ update`.
 
 ---
 
-# Parsing
+# :mag: Parsing
 
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
@@ -325,7 +325,7 @@ NSScanner, but we’re now moving to a more complete parser called ogdl-swift.
 
 ---
 
-# Parsing
+# :mag: Parsing
 
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
@@ -345,7 +345,7 @@ the use cases already.
 
 ---
 
-# Parsing
+# :mag: Parsing
 
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
@@ -370,7 +370,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 ---
 
-# Resolving
+# :recycle: Resolving
 
 1. **Create a graph** of the latest dependency versions
 
@@ -383,7 +383,7 @@ the time, this graph is valid and will become the final result.
 
 ---
 
-# Resolving
+# :recycle: Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -397,7 +397,7 @@ candidate versions for those nested dependencies too.
 
 ---
 
-# Resolving
+# :recycle: Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -412,7 +412,7 @@ version we proposed for Foo.
 
 ---
 
-# Resolving
+# :recycle: Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -424,7 +424,7 @@ start over.
 
 ---
 
-# Resolving
+# :recycle: Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -444,7 +444,7 @@ valid solution.
 
 ---
 
-# Downloading
+# :floppy_disk: Downloading
 
 1. **Fetch the repository** into Carthage’s cache
 
@@ -456,7 +456,7 @@ up-to-date.
 
 ---
 
-# Downloading
+# :floppy_disk: Downloading
 
 1. **Fetch the repository** into Carthage’s cache
 1. **Copy the right version** into Carthage/Checkouts
@@ -469,7 +469,7 @@ out submodules too), but this is the way to think about the workflow.
 
 ---
 
-# Building
+# :hammer: Building
 
 1. **Symlink Carthage/Build** into the dependency folder
 
@@ -479,7 +479,7 @@ be used by the later projects we build.
 
 ---
 
-# Building
+# :hammer: Building
 
 1. **Symlink Carthage/Build** into the dependency folder
 1. **List framework schemes** from the `.xcodeproj`
@@ -489,7 +489,7 @@ schemes that build a dynamic framework. Static libraries, etc. are ignored.
 
 ---
 
-# Building
+# :hammer: Building
 
 1. **Symlink Carthage/Build** into the dependency folder
 1. **List framework schemes** from the `.xcodeproj`
@@ -500,7 +500,7 @@ platform for the scheme, we can determine which architectures to build for.
 
 ---
 
-# Building
+# :hammer: Building
 
 1. **Symlink Carthage/Build** into the dependency folder
 1. **List framework schemes** from the `.xcodeproj`
@@ -512,7 +512,7 @@ one binary using the `lipo` tool.
 
 ---
 
-# Building
+# :hammer: Building
 
 1. **Symlink Carthage/Build** into the dependency folder
 1. **List framework schemes** from the `.xcodeproj`
