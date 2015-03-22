@@ -590,15 +590,37 @@ probably the biggest user of it right now, and, as a result, RAC 3.0 is now gett
 
 ---
 
-# 1.0
-
-1. Per-project settings
-1. CarthageKit API review
-1. CLI parameter review
-1. Profit!!! 💸
+# [fit] 1.0
 
 ^ I'd like to finish by talking about why Carthage isn't at 1.0 yet, and what it
-will take to get there. (Talk about each item.)
+will take to get there.
+
+--- 
+
+# Per-project settings
+
+^ Carthage supports a few flags for changing the default workflow; for example,
+to only build for one platform, to add dependencies as submodules instead of copying their contents, or to skip the build step entirely.
+
+^ Right now, all of those flags need to be specified on the command line. Before
+1.0, we want to support specifying them in Cartfile.private, so all users of the
+project follow the same configuration automatically.
+
+---
+
+# Review CarthageKit API
+# Review command line flags
+
+^ The other major part of 1.0 will be carefully reviewing anything that we can't
+really break after the release is out there, and making any breaking changes
+ahead of time.
+
+^ CarthageKit and the CLI are the main public-facing components where we’ll have
+to maintain backwards compatibility.
+
+---
+
+# Profit!!! 💸
 
 ^ 1.0 is really important to me, because it makes Carthage "real." We have an
 0.7 release to do, and then 1.0 is up right after that, so it shouldn’t be too
