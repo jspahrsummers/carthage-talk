@@ -63,7 +63,7 @@ in using CocoaPods.
 
 ---
 
-# [fit] Podspecs
+# Podspecs
 
 ^ As library authors, we were frustrated with CocoaPods’ requirement that we add
 podspecs for all of our projects. After all, this information already exists in
@@ -71,7 +71,7 @@ Xcode and Git, so why should we duplicate it to another place?
 
 ---
 
-# [fit] Less control
+# Less control
 
 ^ As users, we were frustrated with CocoaPods’ control of the project setup
 process. We know how to set up Xcode projects, and the automated nature of it
@@ -82,7 +82,7 @@ removing files as our dependencies get updated.
 
 ---
 
-# [fit] Centralized
+# Centralized
 
 ^ CocoaPods Trunk is a central package management service, backed by a GitHub
 repository, that is responsible for serving up podspecs.
@@ -94,7 +94,7 @@ use libraries that don’t have any CocoaPods support at all!
 
 ---
 
-# [fit] Ruby
+# Ruby
 
 ^ Even if we could’ve fixed the aforementioned issues, CocoaPods is written in
 Ruby. And while we could certainly learn enough Ruby to do something useful,
