@@ -193,7 +193,7 @@ the “Linked Frameworks and Libraries” section of the app target.
 
 ![inline](Resources/run-script-phase.png)
 
-^ Unfortunately, we're not quite done yet. Because of an App Store submission
+^ Unfortunately, we’re not quite done yet. Because of an App Store submission
 bug that disallows universal (fat) framework binaries, we need to add
 a special build phase that removes them. I’m hoping that Apple eventually makes
 this step unnecessary.
@@ -592,7 +592,7 @@ probably the biggest user of it right now, and, as a result, RAC 3.0 is now gett
 
 # [fit] 1.0
 
-^ I'd like to finish by talking about why Carthage isn't at 1.0 yet, and what it
+^ I’d like to finish by talking about why Carthage isn’t at 1.0 yet, and what it
 will take to get there.
 
 --- 
@@ -611,7 +611,7 @@ project follow the same configuration automatically.
 # Review CarthageKit API
 # Review command line flags
 
-^ The other major part of 1.0 will be carefully reviewing anything that we can't
+^ The other major part of 1.0 will be carefully reviewing anything that we can’t
 really break after the release is out there, and making any breaking changes
 ahead of time.
 
@@ -622,7 +622,7 @@ to maintain backwards compatibility.
 
 # Profit!!! 💸
 
-^ 1.0 is really important to me, because it makes Carthage "real." We have an
+^ 1.0 is really important to me, because it makes Carthage “real.” We have an
 0.7 release to do, and then 1.0 is up right after that, so it shouldn’t be too
 long now. Keep an eye out!
 
