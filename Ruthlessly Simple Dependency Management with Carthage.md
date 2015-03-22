@@ -55,16 +55,15 @@ you’re (comparatively) lucky and get a build failure.
 
 ---
 
-# Why not use CocoaPods?
+# [fit] Why not use
+# [fit] CocoaPods?
 
 ^ Although submodules are problematic in some ways, we also weren’t interested
 in using CocoaPods.
 
 ---
 
-# Why not use CocoaPods?
-
-Podspecs
+# [fit] Podspecs
 
 ^ As library authors, we were frustrated with CocoaPods’ requirement that we add
 podspecs for all of our projects. After all, this information already exists in
@@ -72,9 +71,7 @@ Xcode and Git, so why should we duplicate it to another place?
 
 ---
 
-# Why not use CocoaPods?
-
-Less control over integration
+# [fit] Less control
 
 ^ As users, we were frustrated with CocoaPods’ control of the project setup
 process. We know how to set up Xcode projects, and the automated nature of it
@@ -85,9 +82,7 @@ removing files as our dependencies get updated.
 
 ---
 
-# Why not use CocoaPods?
-
-Requires a central authority
+# [fit] Centralized
 
 ^ CocoaPods Trunk is a central package management service, backed by a GitHub
 repository, that is responsible for serving up podspecs.
@@ -99,9 +94,7 @@ use libraries that don’t have any CocoaPods support at all!
 
 ---
 
-# Why not use CocoaPods?
-
-Written in Ruby
+# [fit] Ruby
 
 ^ Even if we could’ve fixed the aforementioned issues, CocoaPods is written in
 Ruby. And while we could certainly learn enough Ruby to do something useful,
