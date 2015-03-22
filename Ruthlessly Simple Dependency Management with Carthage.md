@@ -200,7 +200,7 @@ the “Linked Frameworks and Libraries” section of the app target.
 
 # Step 4: Strip architectures (iOS only)
 
-![screenshot of Run Script phase]()
+![inline](Resources/run-script-phase.png)
 
 ^ Unfortunately, we're not quite done yet. Because of an App Store submission
 bug that disallows universal (fat) framework binaries, we need to add
