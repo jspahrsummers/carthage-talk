@@ -143,19 +143,11 @@ use libraries that don’t have any CocoaPods support at all!
 
 ---
 
-# Ruby
-
-^ Even if we could’ve fixed the aforementioned issues, CocoaPods is written in
-Ruby. And while we could certainly learn enough Ruby to do something useful,
-it’s definitely an obstacle to contributing. We aren’t Ruby developers by trade,
-and our time is limited, so it was hard to justify.
-
----
-
 # :cry:
 
 ^ It became clear that the existing solution wouldn’t really work for us, and
-that we weren’t in a position to change it to suit our needs.
+that we weren’t in a position to change it to suit our needs. We ultimately
+wanted a tool with a completely different philosophy.
 
 ---
 
@@ -696,7 +688,7 @@ Slides and notes, plus my demo project, are available at:
 
 Thanks to everyone who reviewed this presentation, and to Realm for inviting me to speak![^2]
 
-[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, and you!
+[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, Benjamin Encz, and you!
 
 ^ Does anyone have any questions about the talk, or about Carthage itself?
 Anything you would like me to clarify?
