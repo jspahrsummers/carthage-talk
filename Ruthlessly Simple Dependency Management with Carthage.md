@@ -446,7 +446,7 @@ valid solution.
 
 # Downloading
 
-1. Fetch the repository into Carthage’s cache
+1. **Fetch the repository** into Carthage’s cache
 
 ^ Carthage maintains a global cache of dependency repositories, so you don’t
 have to download the same repository ten times across all of your projects.
@@ -458,8 +458,8 @@ up-to-date.
 
 # Downloading
 
-1. Fetch the repository into Carthage’s cache
-1. Check out the right version into Carthage/Checkouts
+1. **Fetch the repository** into Carthage’s cache
+1. **Copy the right version** into Carthage/Checkouts
 
 ^ Then, we just use `git checkout` to copy the repository files (but not the Git
 metadata) into the Checkouts folder of the project.
