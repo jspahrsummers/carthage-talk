@@ -384,19 +384,11 @@ a universal framework
 
 # Bonus: prebuilt binaries!
 
-```
-$ carthage update
-*** Fetching Mantle
-*** Fetching ReactiveCocoa
-*** Fetching ReactiveCocoaLayout
-*** Fetching Archimedes
-*** Downloading Archimedes at "1.1.4"
-*** Downloading Mantle at "1.5.4"
-*** Downloading ReactiveCocoa at "v2.4.7"
-*** Downloading ReactiveCocoaLayout at "0.5.2"
-```
+![inline](Resources/release-with-binary.png)
 
-![screenshot of GitHub Releases for one of the projects]()
+```
+*** Downloading ReactiveCocoa at "v2.4.7"
+```
 
 ^ You may have noticed earlier that Carthage didn’t actually _build_ the
 dependencies listed in the Cartfile. That’s because each one of these projects
