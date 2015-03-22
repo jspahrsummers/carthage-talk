@@ -688,7 +688,7 @@ Slides and notes, plus my demo project, are available at:
 
 Thanks to everyone who reviewed this presentation, and to Realm for inviting me to speak![^2]
 
-[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, and you!
+[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, Benjamin Encz, and you!
 
 ^ Does anyone have any questions about the talk, or about Carthage itself?
 Anything you would like me to clarify?
