@@ -628,6 +628,11 @@ long now. Keep an eye out!
 
 ---
 
-# Questions?
+# Questions? Comments?
 
-Thanks to: TODO
+All slides and presenters’ notes available at:
+[https://github.com/jspahrsummers/carthage-talk](https://github.com/jspahrsummers/carthage-talk)
+
+Thanks to Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, and James Lawton for presentation review!
+
+Thanks to Arwa Jumkawala, JP Simard, Tim Anglade, and the rest of Realm for hosting this meetup!
