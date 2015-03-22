@@ -8,13 +8,10 @@
 ^ (logo by Reda Lemeden)
 
 ^ Carthage is a dependency manager, intended to be simplest way to add
-frameworks to your Cocoa project. In this talk, I’ll explain exactly what
-Carthage is, how to use it, _why_ it exists, and then go into some of the inner
-workings as well.
+frameworks to your Cocoa project. Carthage is also the first dependency manager
+to officially support Swift frameworks, and is written completely in Swift itself.
 
-^ If you’ve been interested in Carthage, but not sure how to get started, or
-want to know why we didn’t just use and contribute to CocoaPods, I hope you’ll
-walk away from this talk with those answers.
+^ In this talk, I’ll explain exactly what Carthage is, how to use it, _why_ it exists, and then go into some of the inner workings as well.
 
 ---
 
