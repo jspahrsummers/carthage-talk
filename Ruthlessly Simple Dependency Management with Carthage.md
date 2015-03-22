@@ -543,7 +543,7 @@ from 9.5 minutes to about 3!
 
 ---
 
-# CarthageKit
+# [fit] CarthageKit
 
 ^ Most of Carthage’s core behavior is actually implemented as a framework of its
 own, CarthageKit.
