@@ -372,16 +372,75 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # Resolving the dependency graph
 
-1. Propose a graph using the latest allowed version for all dependencies
-1. Incorporate any Cartfiles for those dependencies (at those versions!) into the graph
-1. If the graph is no longer valid, throw it out and try with the next possible version
-1. Rinse and repeat until a valid graph is found
+1. **Create a graph** of the latest dependency versions
 
-^ This is highly inefficient in terms of algorithmic complexity, but performs
-surprisingly well in practice. Part of it is because our resolution algorithm
-throws out graphs the moment they become invalid, and part of it is because our
-resolution algorithm automatically terminates upon finding the first valid
-solution.
+^ Okay, now we know the dependencies we want. It’s time to pick
+some versions, and create a DAG (directed acyclic graph) representing the
+structure of the dependencies.
+
+^ We’ll start by trying the latest allowed version for every dependency. 99% of
+the time, this graph is valid and will become the final result.
+
+---
+
+# Resolving the dependency graph
+
+1. **Create a graph** of the latest dependency versions
+1. **Insert dependency Cartfiles** into the graph
+
+^ Now we need to go to each dependency’s repository _at the version we picked_,
+and look for a Cartfile there. If we find one, we need to include those
+dependencies in the graph too.
+
+^ Because that Cartfile has its _own_ version requirements, we’ll pick some
+candidate versions for those nested dependencies too.
+
+---
+
+# Resolving the dependency graph
+
+1. **Create a graph** of the latest dependency versions
+1. **Insert dependency Cartfiles** into the graph
+1. **If requirements conflict**, throw out the graph
+
+^ Okay, now we have a graph with some possible versions locked in.
+
+^ But wait: we picked version 2.0 for Project Foo, but Project Bar says that it
+must be version 1.x! When this happens, the graph is _inconsistent_ and must be
+thrown out, because we can’t satisfy the version requirement of Bar with the
+version we proposed for Foo.
+
+---
+
+# Resolving the dependency graph
+
+1. **Create a graph** of the latest dependency versions
+1. **Insert dependency Cartfiles** into the graph
+1. **If requirements conflict**, throw out the graph
+    - **Try a new graph** with the next possible version
+
+^ If the graph gets thrown out, we decrement one of the version numbers and
+start over.
+
+---
+
+# Resolving the dependency graph
+
+1. **Create a graph** of the latest dependency versions
+1. **Insert dependency Cartfiles** into the graph
+1. **If requirements conflict**, throw out the graph
+    - **Try a new graph** with the next possible version
+1. **Repeat** until a valid graph is found
+
+^ And we’re going to keep doing that until we find a holistic set of versions
+that are all compatible with each other. If we never do, it becomes an error
+displayed to the user.
+
+^ Our algorithm here is highly inefficient in terms of algorithmic complexity,
+but performs surprisingly well in practice. Part of it is because our resolution
+algorithm throws out graphs the moment they become invalid, and part of it is
+because our resolution algorithm automatically terminates upon finding the first
+valid solution.
 
 ---
 
