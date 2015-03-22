@@ -293,16 +293,19 @@ lose when those tools change.
 
 ---
 
-# How does it work behind the scenes?
-
-`carthage update` proceeds through the following steps:
-
-1. Parse the Cartfile
-1. Resolve the dependency graph
-1. Download and check out all dependencies
-1. Build all dependencies
+# [fit] Behind the Scenes
 
 ^ Now, onto the mechanics of how it works!
+
+---
+
+## Parse the Cartfile
+## Resolve the dependency graph
+## Download all dependencies
+## Build each framework
+
+^ These are the high-level steps that Carthage performs when you run `carthage
+update`.
 
 ^ Let’s dive into each step.
 
