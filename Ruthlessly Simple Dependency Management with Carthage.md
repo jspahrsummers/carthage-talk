@@ -136,7 +136,7 @@ and Git what to do.
 
 ---
 
-# How do you use it?
+# [fit] Using Carthage
 
 ^ So, how do you actually set up an application project with Carthage?
 
@@ -167,7 +167,6 @@ $ carthage update
 *** Downloading Mantle at "1.5.4"
 *** Downloading ReactiveCocoa at "v2.4.7"
 *** Downloading ReactiveCocoaLayout at "0.5.2"
-*** xcodebuild output can be found in /var/folders/t6/tjsdgjqd6j7_vjgb66qvwlb80000gn/T/carthage-xcodebuild.lisVLC.log
 ```
 
 ^ Then, we’ll run `carthage update` to download and install all the
@@ -179,12 +178,14 @@ available.
 
 ---
 
-# Step 3: Linked Frameworks and Libraries
+# Step 3: Link Frameworks
 
 ![inline](Resources/built-frameworks.png) ![inline](Resources/link-frameworks.png)
 
 ^ Now that we have built frameworks on disk, we simply need to drag them into
 the “Linked Frameworks and Libraries” section of the app target.
+
+^ On OS X, these can go directly in the “Embedded Binaries” section.
 
 ---
 
@@ -201,9 +202,10 @@ this step unnecessary.
 
 # That’s it!
 
-^ We now have an app that can begin using any and all of those frameworks, and
-it’s quite easy to update the list in the future by just running `carthage
-update` again.
+^ We now have an app that can begin using all of those frameworks. Others who
+use your project can get the same frameworks by running `carthage bootstrap`,
+and it’s easy to update them in the future by just running `carthage update`
+again.
 
 ---
 
