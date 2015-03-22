@@ -234,7 +234,7 @@ hard to avoid features that add significant complexity.
 Easy: _familiar_ or _approachable_
 Simple: fewer concepts and concerns
 
-See Rich Hickey’s talk, “Simple Made Easy”
+See Rich Hickey’s talk, [Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)
 
 ^ Simple and easy are not the same thing.
 
