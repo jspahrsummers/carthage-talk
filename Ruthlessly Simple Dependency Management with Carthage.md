@@ -145,7 +145,10 @@ use libraries that don’t have any CocoaPods support at all!
 
 # :cry:
 
-^ It became clear that the existing solution wouldn’t really work for us, and
+^ Of course, whether these are positives or negatives really depend on who you
+are. If you’re happy with CocoaPods, continue to use it!
+
+^ For us, it became clear that the existing solution wouldn’t really work, and
 that we weren’t in a position to change it to suit our needs. We ultimately
 wanted a tool with a completely different philosophy.
 
@@ -688,7 +691,7 @@ Slides and notes, plus my demo project, are available at:
 
 Thanks to everyone who reviewed this presentation, and to Realm for inviting me to speak![^2]
 
-[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, Benjamin Encz, and you!
+[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, Benjamin Encz, Robert Böhnke, and you!
 
 ^ Does anyone have any questions about the talk, or about Carthage itself?
 Anything you would like me to clarify?
