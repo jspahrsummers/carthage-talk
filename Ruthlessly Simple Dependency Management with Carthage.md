@@ -110,10 +110,10 @@ that we weren’t in a position to change it to suit our needs.
 
 ---
 
-# @robrix
-# @mdiep
-# @keithduncan
-# @alanjrogers
+## @robrix
+## @mdiep
+## @keithduncan
+## @alanjrogers
 
 ^ So, during one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new
 dependency manager for Cocoa might look like.
@@ -209,7 +209,7 @@ again.
 
 ---
 
-# [fit] “Ruthlessly simple”
+# [fit] “Ruthlessly Simple”
 
 ^ These steps, and even the little bit of manual work at the end, hint at the
 philosophy behind Carthage.
@@ -293,16 +293,16 @@ lose when those tools change.
 
 ---
 
-# [fit] Behind the scenes
+# [fit] Behind the Scenes
 
 ^ Now, onto the mechanics of how it works!
 
 ---
 
-## Parse the Cartfile
-## Resolve the dependency graph
-## Download all dependencies
-## Build each framework
+## _Parse_ the Cartfile
+## _Resolve_ the dependency graph
+## _Download_ all dependencies
+## _Build_ each framework
 
 ^ These are the high-level steps that Carthage performs when you run `carthage
 update`.
@@ -554,7 +554,7 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 
 ---
 
-# [fit] Technical choices
+# [fit] Technical Choices
 
 ---
 
@@ -630,9 +630,9 @@ long now. Keep an eye out!
 
 # Questions? Comments?
 
-All slides and presenters’ notes available at:
+Slides and notes, plus my demo project, are available at:
 [https://github.com/jspahrsummers/carthage-talk](https://github.com/jspahrsummers/carthage-talk)
 
-Thanks to Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, and James Lawton for presentation review!
+Thanks to everyone who reviewed this presentation, and to Realm for inviting me to speak![^2]
 
-Thanks to Arwa Jumkawala, JP Simard, Tim Anglade, and the rest of Realm for hosting this meetup!
+[^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, and you!
