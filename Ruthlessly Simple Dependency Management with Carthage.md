@@ -31,6 +31,51 @@ several other open source libraries.
 
 # [fit] The Problem
 
+^ One of the earliest things we learn as programmers is that we should reuse
+code where we can. After all, why waste time and energy writing the same thing
+over and over again?
+
+^ In Cocoa, reusable code is typically put into _libraries_ or _frameworks_,
+which encapsulate one or more components that may be useful in multiple
+application projects (or even other frameworks).
+
+---
+
+# Dependencies in Cocoa **(historically)**
+
+1. Copied source files
+1. Zipped binaries
+1. SVN externals, Git submodules
+1. Git subtrees
+
+^ Before CocoaPods and Carthage, there were a few different ways to distribute
+libraries, all of them terrible in their own way.
+
+^ Raw source and binaries don’t include any concept of versioning, which is
+essential to avoid conflicts between different libraries and to stay up-to-date.
+On the other hand, the Subversion, Git, Mercurial, etc. options are often a pain
+to use in their own right.
+
+---
+
+# Dependencies on other platforms
+
+1. Dependency managers
+
+^ By contrast, most modern platforms have dependency managers, usually created
+by the same team or company that designs the language.
+
+^ A dependency manager is responsible for helping you pick the right version for
+each library you want, and then doing whatever is required to start using that
+library.
+
+---
+
+# [fit] Our Problem
+
+^ So that’s why dependency management is important in general. But why Carthage?
+What specific problem were we trying to solve?
+
 ---
 
 > GitHub for Mac has what could be called “excessively nested submodules.”
