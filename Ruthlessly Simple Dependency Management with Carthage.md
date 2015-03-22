@@ -446,11 +446,26 @@ valid solution.
 
 # Downloading a dependency
 
-1. Fetch the repository into a global Carthage cache
-1. Run a modified `git checkout` to copy the right version of the repository into Carthage/Checkouts
+1. Fetch the repository into Carthage’s cache
 
-^ There’s some more complexity here in practice (for example, dealing with
-submodules), but this is the way to think about the workflow.
+^ Carthage maintains a global cache of dependency repositories, so you don’t
+have to download the same repository ten times across all of your projects.
+
+^ The first step of downloading a dependency is making sure that cache is
+up-to-date.
+
+---
+
+# Downloading a dependency
+
+1. Fetch the repository into Carthage’s cache
+1. Check out the right version into Carthage/Checkouts
+
+^ Then, we just use `git checkout` to copy the repository files (but not the Git
+metadata) into the Checkouts folder of the project.
+
+^ There’s some more complexity here in practice (for example, Carthage checks
+out submodules too), but this is the way to think about the workflow.
 
 ---
 
