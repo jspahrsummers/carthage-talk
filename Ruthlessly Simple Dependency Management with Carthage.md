@@ -471,18 +471,57 @@ out submodules too), but this is the way to think about the workflow.
 
 # Building
 
-1. Symlink the Carthage/Build folder from the application project into the
-dependency’s folder
-1. Run `xcodebuild -list` on the rootmost `xcodeproj` to find shared schemes
-1. Filter out any schemes which do not build a dynamic framework
-1. Find the rootmost `xcodeproj` _or_ `xcworkspace`, which will be used for
-building
-1. For each scheme, build for each of the platforms it supports
-1. If we built multiple architectures, use `lipo` to combine them into
-a universal framework
-1. Copy the final build products into the shared Carthage/Build folder
+1. **Symlink Carthage/Build** into the dependency folder
 
-^ And we’re done!
+^ Once every dependency has been downloaded, we first link all the
+Carthage/Build folders together. This ensures that any frameworks we build can
+be used by the later projects we build.
+
+---
+
+# Building
+
+1. **Symlink Carthage/Build** into the dependency folder
+1. **List framework schemes** from the `.xcodeproj`
+
+^ Then, in the root-most Xcode project, we use `xcodebuild -list` to find all
+schemes that build a dynamic framework. Static libraries, etc. are ignored.
+
+---
+
+# Building
+
+1. **Symlink Carthage/Build** into the dependency folder
+1. **List framework schemes** from the `.xcodeproj`
+1. **Build each scheme** for all supported architectures
+
+^ Now we can use `xcodebuild` to actually build. By looking at the target
+platform for the scheme, we can determine which architectures to build for.
+
+---
+
+# Building
+
+1. **Symlink Carthage/Build** into the dependency folder
+1. **List framework schemes** from the `.xcodeproj`
+1. **Build each scheme** for all supported architectures
+1. **Combine multiple architectures** with `lipo`
+
+^ Once all of the architectures have been built, we combine the products into
+one binary using the `lipo` tool.
+
+---
+
+# Building
+
+1. **Symlink Carthage/Build** into the dependency folder
+1. **List framework schemes** from the `.xcodeproj`
+1. **Build each scheme** for all supported architectures
+1. **Combine multiple architectures** with `lipo`
+1. **Copy the built frameworks** into Carthage/Build
+
+^ The final universal framework then gets copied into the Carthage/Build folder,
+for the parent project to find.
 
 ---
 
