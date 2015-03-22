@@ -113,25 +113,15 @@ dependency manager for Cocoa might look like.
 
 ---
 
-# [fit] 
-# [fit]
-# [fit]
-# [fit]
-# [fit] ![inline fit](Resources/xcode.png) ⇄ ![inline fit](Resources/carthage-logo-colored.png) ⇆ ![inline fit](Resources/git-logo.png)
+# Our goals
+# [fit] ![inline fit](Resources/git-logo.png) ⇄ ![inline fit](Resources/carthage-logo-colored.png) ⇆ ![inline fit](Resources/xcode.png)
 
->
+1. Pick compatible versions for all dependencies
+1. Check out dependencies with Git
+1. Build frameworks with Xcode
 
 ^ Mostly, we wanted a simple coordinator between Xcode and Git, plus
 a constraint solver for resolving dependency versions.
-
----
-
-# What does Carthage do?
-
-1. Picks a compatible version of each dependency
-1. Checks out each dependency with Git
-1. Builds each dependency with Xcode
-1. Gives you ready-to-use framework binaries
 
 ^ You can see from this list that Carthage integrates heavily with your standard
 tools. All that Carthage does on its own is find the right version, then tell Xcode
