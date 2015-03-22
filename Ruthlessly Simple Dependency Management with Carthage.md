@@ -191,8 +191,7 @@ available.
 
 # Step 3: Linked Frameworks and Libraries
 
-![screenshot of Carthage/Build/iOS]()
-![screenshot of Linked Frameworks settings]()
+![inline](Resources/built-frameworks.png) ![inline](Resources/link-frameworks.png)
 
 ^ Now that we have built frameworks on disk, we simply need to drag them into
 the “Linked Frameworks and Libraries” section of the app target.
