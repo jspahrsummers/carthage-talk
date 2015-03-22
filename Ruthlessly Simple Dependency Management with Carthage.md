@@ -554,6 +554,10 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 
 ---
 
+# [fit] Technical choices
+
+---
+
 # Swift vs. Objective-C
 
 * Type safety
@@ -568,14 +572,21 @@ of Objective-C. These are just some of them.
 
 ---
 
-# Why does it use ReactiveCocoa?
+# ReactiveCocoa
 
-* Simplifies the invocation of shell tasks (see ReactiveTask)
-* Simplifies networking (e.g., the GitHub API)
-* Simplifies the dependency resolution algorithm
-* Needed a real world application of RAC’s Swift API
+* Simplifies networking (with the GitHub API)
+* Simplifies the dependency resolver
+* Simplifies shelling out, via [ReactiveTask](https://github.com/Carthage/ReactiveTask)
+* Carthage helps test RAC 3.0 in the real world
 
-^ (Explain each.)
+^ In GitHub for Mac, we use RAC for everything because of how many different
+kinds of problems it can solve. Carthage is an especially great use for it,
+because of all the inherently stream-based stuff we need to do (like running
+shell tasks and networking).
+
+^ Separately, we also wanted a way to test RAC’s Swift API (part of 3.0), in the
+real world, to make sure it works well and is pleasant to use. Carthage is
+probably the biggest user of it right now, and, as a result, RAC 3.0 is now getting close to a release.
 
 ---
 
