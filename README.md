@@ -6,4 +6,4 @@ This talk will explain what Carthage is and how to use it, then dive into the ph
 
 _This talk will be given at the [April
 2 meeting](http://www.meetup.com/swift-language/events/220485678/) of
-[SLUG](http://www.meetup.com/swift-language), using Deckset theme “Sketchnote.”_
+[SLUG](http://www.meetup.com/swift-language), using [Deckset](http://www.decksetapp.com) theme “Sketchnote.”_
