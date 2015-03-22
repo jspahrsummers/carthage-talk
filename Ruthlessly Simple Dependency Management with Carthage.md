@@ -313,16 +313,60 @@ update`.
 
 # Parsing the Cartfile
 
-1. Parse [OGDL](http://www.ogdl.org)
-1. Break down into a list of dependencies
-1. Determine the type of dependency (`github` or `git`)
-1. Parse any version constraint
+**Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
+
+```
+github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+```
 
 ^ Carthage files are written in a subset of OGDL, the Ordered Graph Data
 Language. Originally, the logic for parsing our subset was written using
 NSScanner, but we’re now moving to a more complete parser called ogdl-swift.
 
-^ (Explain remaining steps.)
+---
+
+# Parsing the Cartfile
+
+**Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
+
+```
+github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+```
+
+**Determine the type of each dependency**
+
+```
+github "ReactiveCocoa/ReactiveCocoa"
+```
+
+^ Currently, dependencies can either refer to GitHub repositories or arbitrary
+Git repositories. We may add other types in the future, but this covers most of
+the use cases already.
+
+---
+
+# Parsing the Cartfile
+
+**Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
+
+```
+github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+```
+
+**Determine the type of each dependency**
+
+```
+github "ReactiveCocoa/ReactiveCocoa"
+```
+
+**Parse any version constraint**
+
+```
+~> 2.4.7
+```
+
+^ Determine what the version number is, if any, and what it means: “equal to”,
+“compatible with”, or “at least”
 
 ---
 
