@@ -209,7 +209,7 @@ again.
 
 ---
 
-# “Ruthlessly simple”
+# [fit] “Ruthlessly simple”
 
 ^ These steps, and even the little bit of manual work at the end, hint at the
 philosophy behind Carthage.
@@ -220,34 +220,32 @@ hard to avoid features that add significant complexity.
 
 ---
 
-# Simple vs. Easy
+## _Easy:_ familiar or approachable
+## _Simple:_ fewer concepts and concerns[^1]
 
-Easy: _familiar_ or _approachable_
-Simple: fewer concepts and concerns
-
-See Rich Hickey’s talk, [Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)
+[^1]: See Rich Hickey’s talk, [Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)
 
 ^ Simple and easy are not the same thing.
 
 ---
 
-# Simple vs. Easy
-
-CocoaPods is _easy_
-Carthage is _simple_
+# CocoaPods is _easy_
+# Carthage is _simple_
 
 ^ CocoaPods is all about making it as easy as possible to find and use
 libraries, but it achieves those goals at the cost of complexity. It becomes
 easier but less simple.
+
+---
+
+# [fit] Simpler tools are…
 
 ^ With Carthage, we really wanted to focus on simplicity, because we believe
 that the benefits are enormous. For example…
 
 ---
 
-# Simpler tools are…
-
-Easier to maintain
+# Easier to _maintain_
 
 ^ By keeping things simple, and our problem space small, we don’t need to handle
 as many edge cases. And by integrating with other tools, like Xcode and Git, we
@@ -256,9 +254,7 @@ do.
 
 ---
 
-# Simpler tools are…
-
-Easier to understand
+# Easier to _understand_
 
 ^ Simplicity makes it easier to understand how Carthage works and how to use it,
 because it helps users create a mental model of what’s going on. If something
@@ -267,9 +263,7 @@ resolve the issue on their own.
 
 ---
 
-# Simpler tools are…
-
-Easier to contribute to
+# Easier to _contribute_ to
 
 ^ This is related to the previous points, but important in its own right. It’s
 a lot easier to implement fixes or new features within a simple codebase than
@@ -277,9 +271,8 @@ a complex one.
 
 ---
 
-# Simpler tools are…
-
-More flexible and composable
+# More _flexible_
+# More _composable_
 
 ^ It’s impossible for developers to predict all the possible ways that someone
 might want to use their software. So if there’s a use case out there that we’re
@@ -288,9 +281,7 @@ will than to convince a complex tool to do exactly what they want.
 
 ---
 
-# Simpler tools are…
-
-Automatically made better as their integration points get better
+# [fit] _Enhanced_ when other tools improve
 
 ^ In other words, for the parts where we hand off responsibility to Xcode and
 Git, we automatically benefit from improvements made to those tools, with little
