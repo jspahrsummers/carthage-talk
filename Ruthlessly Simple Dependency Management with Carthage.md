@@ -525,7 +525,7 @@ for the parent project to find.
 
 ---
 
-# Bonus: prebuilt binaries!
+# :sparkles: BONUS: Prebuilt binaries! :sparkles:
 
 ![inline](Resources/release-with-binary.png)
 
