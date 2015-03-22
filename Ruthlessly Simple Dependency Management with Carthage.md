@@ -11,7 +11,14 @@
 frameworks to your Cocoa project. Carthage is also the first dependency manager
 to officially support Swift frameworks, and is written completely in Swift itself.
 
-^ In this talk, I’ll explain exactly what Carthage is, how to use it, _why_ it exists, and then go into some of the inner workings as well.
+---
+
+# What
+# Why
+# How to use it
+# How it works
+
+^ In this talk, I’ll explain exactly what Carthage is, _why_ it exists, how to use it, and then go into some of the inner workings as well.
 
 ---
 
@@ -670,6 +677,18 @@ long now. Keep an eye out!
 
 ---
 
+# What
+# Why
+# How to use it
+# How it works
+
+^ So, to recap, we covered what Carthage is and how to use it, why we built it
+and what problem it’s solving, and how it works behind the scenes.
+
+^ Ultimately, we’ve just scratched the surface, but hopefully this talk has helped create a clear picture of the project and its goals, as well as the ways in which it’s both similar to and different from CocoaPods.
+
+---
+
 # Questions? Comments?
 
 Slides and notes, plus my demo project, are available at:
@@ -678,3 +697,6 @@ Slides and notes, plus my demo project, are available at:
 Thanks to everyone who reviewed this presentation, and to Realm for inviting me to speak![^2]
 
 [^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, and you!
+
+^ Does anyone have any questions about the talk, or about Carthage itself?
+Anything you would like me to clarify?
