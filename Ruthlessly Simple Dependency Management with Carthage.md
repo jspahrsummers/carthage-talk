@@ -293,7 +293,7 @@ lose when those tools change.
 
 ---
 
-# [fit] Behind the Scenes
+# [fit] Behind the scenes
 
 ^ Now, onto the mechanics of how it works!
 
