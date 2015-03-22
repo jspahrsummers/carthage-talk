@@ -554,15 +554,17 @@ of Carthage, or compatible with Carthage, CarthageKit is your friend.
 
 ---
 
-# Why is it written in Swift (and not Objective-C)?
+# Swift vs. Objective-C
 
 * Type safety
-* Value types (especially enums)
+* Value types _(especially enums)_
 * Much faster to write
 * Better modularization
-* Desire to write a complete app using The Next Big Thing
+* The Next Big Thing™
 
-^ (Explain each.)
+^ Carthage and CarthageKit are written 100% in Swift. Although it definitely
+involves its share of obstacles, we saw huge benefits from using Swift instead
+of Objective-C. These are just some of them.
 
 ---
 
