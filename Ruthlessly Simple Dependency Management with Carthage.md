@@ -180,6 +180,26 @@ and Git what to do.
 
 ---
 
+# Dynamic frameworks vs. static libraries
+
+- iOS 8+ only
+- Can include resources
+- Self-contained and ready-to-use
+- Avoid duplicate symbol errors
+- **Required for Swift**
+
+^ Carthage only supports building dynamic frameworks, and we have no intention
+of supporting other product types. Frameworks are only supported on iOS 8+, but
+iOS 9 is right around the corner anyways, and OS X has always supported them.
+
+^ Frameworks come with significant advantages—most notably, being completely
+self-contained. This means that built frameworks can be distributed as-is,
+without any auxiliary files necessary, which is hugely beneficial for Carthage.
+
+^ Also, Xcode won’t build Swift code into a static library—only a framework.
+
+---
+
 # [fit] Using Carthage
 
 ^ So, how do you actually set up an application project with Carthage?
