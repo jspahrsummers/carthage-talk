@@ -311,7 +311,7 @@ update`.
 
 ---
 
-# Parsing the Cartfile
+# Parsing
 
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
@@ -325,7 +325,7 @@ NSScanner, but we’re now moving to a more complete parser called ogdl-swift.
 
 ---
 
-# Parsing the Cartfile
+# Parsing
 
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
@@ -345,7 +345,7 @@ the use cases already.
 
 ---
 
-# Parsing the Cartfile
+# Parsing
 
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
@@ -370,7 +370,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 ---
 
-# Resolving the dependency graph
+# Resolving
 
 1. **Create a graph** of the latest dependency versions
 
@@ -383,7 +383,7 @@ the time, this graph is valid and will become the final result.
 
 ---
 
-# Resolving the dependency graph
+# Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -397,7 +397,7 @@ candidate versions for those nested dependencies too.
 
 ---
 
-# Resolving the dependency graph
+# Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -412,7 +412,7 @@ version we proposed for Foo.
 
 ---
 
-# Resolving the dependency graph
+# Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -424,7 +424,7 @@ start over.
 
 ---
 
-# Resolving the dependency graph
+# Resolving
 
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
@@ -444,7 +444,7 @@ valid solution.
 
 ---
 
-# Downloading a dependency
+# Downloading
 
 1. Fetch the repository into Carthage’s cache
 
@@ -456,7 +456,7 @@ up-to-date.
 
 ---
 
-# Downloading a dependency
+# Downloading
 
 1. Fetch the repository into Carthage’s cache
 1. Check out the right version into Carthage/Checkouts
@@ -469,7 +469,7 @@ out submodules too), but this is the way to think about the workflow.
 
 ---
 
-# Building a dependency
+# Building
 
 1. Symlink the Carthage/Build folder from the application project into the
 dependency’s folder
