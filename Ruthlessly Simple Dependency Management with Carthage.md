@@ -99,7 +99,14 @@ use libraries that don’t have any CocoaPods support at all!
 ^ Even if we could’ve fixed the aforementioned issues, CocoaPods is written in
 Ruby. And while we could certainly learn enough Ruby to do something useful,
 it’s definitely an obstacle to contributing. We aren’t Ruby developers by trade,
-and our time is limited, so we wanted something easier to work on.
+and our time is limited, so it was hard to justify.
+
+---
+
+# :cry:
+
+^ It became clear that the existing solution wouldn’t really work for us, and
+that we weren’t in a position to change it to suit our needs.
 
 ---
 
