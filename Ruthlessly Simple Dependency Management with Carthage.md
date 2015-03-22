@@ -328,7 +328,7 @@ lose when those tools change.
 
 # Parsing the Cartfile
 
-1. Parse OGDL
+1. Parse [OGDL](http://www.ogdl.org)
 1. Break down into a list of dependencies
 1. Determine the type of dependency (`github` or `git`)
 1. Parse any version constraint
