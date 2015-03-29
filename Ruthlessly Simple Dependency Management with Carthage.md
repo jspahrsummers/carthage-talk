@@ -7,7 +7,7 @@
 
 ^ (logo by Reda Lemeden)
 
-^ Carthage is a dependency manager, intended to be simplest way to add frameworks to your Cocoa project. Carthage is also the first dependency manager to officially support Swift frameworks, and is written completely in Swift itself.
+^ Carthage is a dependency manager, intended to be simplest way to add frameworks to your Cocoa project. Carthage is also the first dependency manager to officially support Swift, and is written completely in Swift itself.
 
 ---
 
@@ -31,9 +31,9 @@
 
 # [fit] The Problem
 
-^ One of the earliest things we learn as programmers is that we should reuse code where we can. After all, why waste time and energy writing the same thing over and over again?
+^ One of the first things we learn as programmers is that we should reuse code. Why waste time and energy writing the same thing over and over?
 
-^ In Cocoa, reusable code is typically put into _libraries_ or _frameworks_, which encapsulate one or more components that may be useful in multiple application projects (or even other frameworks).
+^ Reusable code is put into _libraries_ or _frameworks_, which encapsulate components that may be useful in multiple other projects.
 
 ---
 
@@ -44,9 +44,9 @@
 1. SVN externals, Git submodules
 1. Git subtrees
 
-^ Before CocoaPods and Carthage, there were a few different ways to distribute libraries, all of them terrible in their own way.
+^ Before CocoaPods and Carthage, there were these ways to distribute Cocoa libraries, all of them terrible.
 
-^ Raw source and binaries don’t include any concept of versioning, which is essential to avoid conflicts between different libraries and to stay up-to-date. On the other hand, the Subversion, Git, Mercurial, etc. options are often a pain to use in their own right.
+^ Source files and binaries aren’t versioned, making it hard to avoid conflicts and stay up-to-date. On the other hand, the Subversion, Git, Mercurial, etc. options are often a pain to use in their own right.
 
 ---
 
@@ -54,15 +54,15 @@
 
 1. Dependency managers
 
-^ By contrast, most modern platforms have dependency managers, usually created by the same team or company that designs the language.
+^ Most modern platforms have dependency managers, usually created by the same team that designs the language.
 
-^ A dependency manager is responsible for helping you pick the right version for each library you want, and then doing whatever is required to start using that library.
+^ A dependency manager helps you pick the right version for each library you want, and then sets up each library so you can use it.
 
 ---
 
 # [fit] _Our_ Problem
 
-^ So that’s why dependency management is important in general. But why Carthage? What specific problem were we trying to solve?
+^ That’s why dependency management is important in general. But why Carthage? What specific problem were we trying to solve?
 
 ---
 
@@ -71,15 +71,15 @@
 
 ![](Resources/nested-submodules.png)
 
-^ For the longest time, GitHub for Mac imported dependencies exclusively through Git submodules and Xcode subprojects. This works pretty well until your dependencies have a shared dependency on something else.
+^ For the longest time, GitHub for Mac imported dependencies exclusively through Git submodules and Xcode subprojects. This works well until your two or more of your dependencies have a shared dependency.
 
 ---
 
 ![original fit](Resources/dependency-graph.pdf)
 
-^ In our case, we used ReactiveCocoa and Mantle within several of our other libraries. Because the app must ultimately pick one version of RAC to link, problems can arise if libraries expect different versions of RAC.
+^ We used RAC and Mantle within several of our other libraries. Because the app must pick _one_ version of RAC to link, problems can arise if projects expect different versions of RAC.
 
-^ Most dangerously, there’s often no indication that this is the case, unless you’re (comparatively) lucky and get a build failure.
+^ Most dangerously, there’s often no indication of conflicts like these, unless you’re lucky and get a build failure.
 
 ---
 
@@ -92,31 +92,31 @@
 
 # Podspecs
 
-^ As library authors, we were frustrated with CocoaPods’ requirement that we add podspecs for all of our projects. After all, this information already exists in Xcode and Git, so why should we duplicate it to another place?
+^ As library authors, we were frustrated with CocoaPods’ requirement that we add podspecs for all of our projects. This information already exists in Xcode and Git, so why should we duplicate it?
 
 ---
 
 # Less control
 
-^ As users, we were frustrated with CocoaPods’ control of the project setup process. We know how to set up Xcode projects, and the automated nature of it often took away our flexibility.
+^ As users, we were frustrated with CocoaPods’ control of the project setup process. We know how to set up Xcode projects, and the automated setup takes away our flexibility.
 
-^ CocoaPods does offer a `--no-integrate` option, which stops it from manipulating your own Xcode project/workspace, but you still have to use the generated Pods project. You don’t get the choice to integrate dependencies using their own Xcode projects, for example.
+^ CocoaPods does have a `--no-integrate` option, which stops it from manipulating your Xcode project, but you still have to use its generated Pods project. You don’t get the choice to integrate dependencies via their own Xcode projects, for example.
 
 ---
 
 # Centralized
 
-^ CocoaPods Trunk is a central package management service, backed by a GitHub repository, that is responsible for serving up podspecs.
+^ We think CocoaPods’ centralized package list makes library authors’ jobs harder, because they’re now responsible for deploying to yet another place.
 
-^ We think a centralized list makes library authors’ jobs harder, because they’re now responsible for deploying releases to yet another place. It also makes it harder to use library versions that haven’t been recorded there, or to use libraries that don’t have any CocoaPods support at all!
+^ It also makes it harder to use library versions that haven’t been submitted, and to use libraries without explicit CocoaPods support.
 
 ---
 
 # :cry:
 
-^ Of course, whether these are positives or negatives really depend on who you are. If you’re happy with CocoaPods, continue to use it!
+^ Of course, whether these are positives or negatives depend on what you want. If you’re happy with CocoaPods, continue to use it!
 
-^ For us, it became clear that the existing solution wouldn’t really work, and that we weren’t in a position to change it to suit our needs. We ultimately wanted a tool with a completely different philosophy.
+^ For us, it became clear that the existing solution wouldn’t work, and that we weren’t in a position to change it. We wanted a tool with a completely different philosophy.
 
 ---
 
@@ -125,7 +125,7 @@
 ## @keithduncan
 ## @alanjrogers
 
-^ So, during one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new dependency manager for Cocoa might look like.
+^ During one of GitHub’s “Open Source Fridays,” these folks and I started discussing what a new dependency manager for Cocoa might look like.
 
 ---
 
@@ -136,9 +136,9 @@
 1. Check out dependencies with Git
 1. Build frameworks with Xcode
 
-^ Mostly, we wanted a simple coordinator between Xcode and Git, plus a constraint solver for resolving dependency versions.
+^ We wanted a simple coordinator between Xcode and Git, plus a constraint solver for resolving dependency versions.
 
-^ You can see from this list that Carthage integrates heavily with your standard tools. All that Carthage does on its own is find the right version, then tell Xcode and Git what to do.
+^ All the tool should do on its own is find the right version, and the rest should just be communicating with Xcode and Git.
 
 ---
 
@@ -150,17 +150,15 @@
 - Avoid duplicate symbol errors
 - **Required for Swift**
 
-^ Carthage only supports building dynamic frameworks, and we have no intention of supporting other product types. Frameworks are only supported on iOS 8+, but iOS 9 is right around the corner anyways, and OS X has always supported them.
+^ Carthage uses frameworks and not static libraries, because frameworks come with significant advantages—like being completely self-contained.
 
-^ Frameworks come with significant advantages—most notably, being completely self-contained. This means that built frameworks can be distributed as-is, without any auxiliary files necessary, which is hugely beneficial for Carthage.
-
-^ Also, Xcode won’t build Swift code into a static library—only a framework.
+^ Built frameworks can be distributed as-is, without any auxiliary files necessary, which is huge for the Carthage use case.
 
 ---
 
 # [fit] Using Carthage
 
-^ So, how do you actually set up an application project with Carthage?
+^ How do you actually set up an application project with Carthage?
 
 ---
 
@@ -172,7 +170,7 @@ github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
 github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 ```
 
-^ Let’s set up a project that will use Mantle, ReactiveCocoa, and the less well-known ReactiveCocoaLayout. (Explain each line of the Cartfile.)
+^ Let’s set up a project with Mantle, ReactiveCocoa, and the less well-known ReactiveCocoaLayout. (Explain each line of the Cartfile.)
 
 ---
 
@@ -190,7 +188,7 @@ $ carthage update
 *** Downloading ReactiveCocoaLayout at "0.5.2"
 ```
 
-^ Then, we’ll run `carthage update` to download and install all the dependencies.
+^ We’ll run `carthage update` to download and install all the dependencies.
 
 ^ Notice that it pulled in Archimedes, which is a dependency of ReactiveCocoaLayout, and that it picked the newest compatible version of Mantle available.
 
@@ -210,19 +208,19 @@ $ carthage update
 
 ![inline](Resources/run-script-phase.png)
 
-^ Unfortunately, we’re not quite done yet. Because of an App Store submission bug that disallows universal (fat) framework binaries, we need to add a special build phase that removes them. I’m hoping that Apple eventually makes this step unnecessary.
+^ Because of an App Store submission bug that disallows universal framework binaries, we need to add a build script to remove them. I’m hoping that Apple eventually fixes my radar and makes this step unnecessary.
 
 ---
 
 # That’s it!
 
-^ We now have an app that can begin using all of those frameworks. Others who use your project can get the same frameworks by running `carthage bootstrap`, and it’s easy to update them in the future by just running `carthage update` again.
+^ We now have an app using all of those frameworks. Others using that project can get the same frameworks by running `carthage bootstrap`, and it’s easy to update them in the future by running `carthage update` again.
 
 ---
 
 # [fit] “Ruthlessly Simple”
 
-^ These steps, and even the little bit of manual work at the end, hint at the philosophy behind Carthage.
+^ These steps hint at the philosophy behind Carthage.
 
 ^ The prevailing design goal, overriding almost all others, is “ruthless simplicity.” We want a tool that is as simple as possible, and will try very hard to avoid features that add significant complexity.
 
@@ -240,46 +238,48 @@ $ carthage update
 # CocoaPods is _easy_
 # Carthage is _simple_
 
-^ CocoaPods is all about making it as easy as possible to find and use libraries, but it achieves those goals at the cost of complexity. It becomes easier but less simple.
+^ CocoaPods is all about making it as easy as possible to find and use libraries, but it achieves those goals at the cost of complexity. It becomes _easier_ but less _simple_.
 
 ---
 
 # [fit] Simpler tools are…
 
-^ With Carthage, we really wanted to focus on simplicity, because we believe that the benefits are enormous. For example…
+^ With Carthage, we really wanted to focus more on simplicity, because we believe that the benefits are enormous. For example, simpler tools are…
 
 ---
 
 # Easier to _maintain_
 
-^ By keeping things simple, and our problem space small, we don’t need to handle as many edge cases. And by integrating with other tools, like Xcode and Git, we delegate responsibility and maintenance to them, so there’s less for Carthage to do.
+^ By keeping things simple, we don’t need to handle as many edge cases. And by integrating with other tools, like Xcode and Git, we delegate responsibility to them, resulting in less code within Carthage.
 
 ---
 
 # Easier to _understand_
 
-^ Simplicity makes it easier to understand how Carthage works and how to use it, because it helps users create a mental model of what’s going on. If something goes wrong (e.g., because of a bug), understanding the tool may help the user resolve the issue on their own.
+^ Simplicity makes it easier to form a mental model of what’s going on. If something goes wrong, understanding what the tool does may help you resolve the issue.
 
 ---
 
 # Easier to _contribute_ to
 
-^ This is related to the previous points, but important in its own right. It’s a lot easier to implement fixes or new features within a simple codebase than a complex one.
+^ It’s a lot easier to implement fixes or new features within a simple codebase than a complex one.
 
 ---
 
 # More _flexible_
 # More _composable_
 
-^ It’s impossible for developers to predict all the possible ways that someone might want to use their software. So if there’s a use case out there that we’re not anticipating, it’s a lot easier for the user to bend a simpler tool to their will than to convince a complex tool to do exactly what they want.
+^ It’s impossible for us to predict all the possible ways that someone might want to use our software.
+
+^ If there’s a use case out there that we’re not anticipating, it’s a lot easier to bend our simpler tool to your will than to convince a complex tool to do exactly what you want.
 
 ---
 
 # [fit] _Enhanced_ when other tools improve
 
-^ In other words, for the parts where we hand off responsibility to Xcode and Git, we automatically benefit from improvements made to those tools, with little or no effort on our part.
+^ Wherever we hand off responsibility to Xcode and Git, we automatically benefit from improvements made to those tools, with little or no effort on our part.
 
-^ On the other hand, the more we try to duplicate their functionality (even in small amounts), the more fragile our system becomes, and the more we stand to lose when those tools change.
+^ On the other hand, the more we try to duplicate their functionality, the more fragile our system becomes, and the more we lose when those tools change.
 
 ---
 
@@ -308,7 +308,7 @@ $ carthage update
 github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
 ```
 
-^ Carthage files are written in a subset of OGDL, the Ordered Graph Data Language. Originally, the logic for parsing our subset was written using NSScanner, but we’re now moving to a more complete parser called ogdl-swift.
+^ Carthage files are written in a subset of the Ordered Graph Data Language, a dead simple language that’s useful for configuration files like this.
 
 ---
 
@@ -326,7 +326,7 @@ github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
 github "ReactiveCocoa/ReactiveCocoa"
 ```
 
-^ Currently, dependencies can either refer to GitHub repositories or arbitrary Git repositories. We may add other types in the future, but this covers most of the use cases already.
+^ Currently, dependencies can be GitHub repositories or arbitrary Git repositories. We may add other types in the future, but this covers most of the use cases already.
 
 ---
 
@@ -358,9 +358,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 1. **Create a graph** of the latest dependency versions
 
-^ Okay, now we know the dependencies we want. It’s time to pick some versions, and create a DAG (directed acyclic graph) representing the structure of the dependencies.
+^ Now we know the dependencies we want, so it’s time to create a directed acyclic graph representing the versions of and relationships between the dependencies.
 
-^ We’ll start by trying the latest allowed version for every dependency. 99% of the time, this graph is valid and will become the final result.
+^ We start by trying the latest allowed version for every dependency. 99% of the time, this graph will become the final result.
 
 ---
 
@@ -369,9 +369,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 1. **Create a graph** of the latest dependency versions
 1. **Insert dependency Cartfiles** into the graph
 
-^ Now we need to go to each dependency’s repository _at the version we picked_, and look for a Cartfile there. If we find one, we need to include those dependencies in the graph too.
+^ Now we need to go to each dependency’s repository _at the version we picked_, and look for a Cartfile there.
 
-^ Because that Cartfile has its _own_ version requirements, we’ll pick some candidate versions for those nested dependencies too.
+^ If we find one, we need to include those dependencies in the graph, and pick some candidate versions for those nested dependencies too.
 
 ---
 
@@ -383,7 +383,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 ^ Okay, now we have a graph with some possible versions locked in.
 
-^ But wait: we picked version 2.0 for Project Foo, but Project Bar says that it must be version 1.x! When this happens, the graph is _inconsistent_ and must be thrown out, because we can’t satisfy the version requirement of Bar with the version we proposed for Foo.
+^ But let’s say we picked version 2.0 for Foo, while Bar says that it must be version 1.x! When this happens, the graph is _inconsistent_ and must be thrown out, because we can’t satisfy that requirement with the version we proposed.
 
 ---
 
@@ -394,7 +394,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 1. **If requirements conflict**, throw out the graph
     - **Try a new graph** with the next possible version
 
-^ If the graph gets thrown out, we decrement one of the version numbers and start over.
+^ If this happens, and the graph gets thrown out, we decrement one of the version numbers and start over.
 
 ---
 
@@ -406,9 +406,9 @@ github "ReactiveCocoa/ReactiveCocoa"
     - **Try a new graph** with the next possible version
 1. **Repeat** until a valid graph is found
 
-^ And we’re going to keep doing that until we find a holistic set of versions that are all compatible with each other. If we never do, it becomes an error displayed to the user.
+^ We keep doing that until we find a set of versions that are all compatible with each other.
 
-^ Our algorithm here is highly inefficient in terms of algorithmic complexity, but performs surprisingly well in practice. Part of it is because our resolution algorithm throws out graphs the moment they become invalid, and part of it is because our resolution algorithm automatically terminates upon finding the first valid solution.
+^ This is highly inefficient in the worst case, but performs surprisingly well in practice. Part of it is because we throw out graphs the moment they become invalid, and part of it is because we automatically terminate when we find the first valid solution.
 
 ---
 
@@ -416,9 +416,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 1. **Fetch the repository** into Carthage’s cache
 
-^ Carthage maintains a global cache of dependency repositories, so you don’t have to download the same repository ten times across all of your projects.
+^ Carthage maintains a global cache of dependency repositories, so you don’t have to download the same thing ten times across all of your projects.
 
-^ The first step of downloading a dependency is making sure that cache is up-to-date.
+^ So, the first step of downloading a dependency is making sure that cache is up-to-date.
 
 ---
 
@@ -427,9 +427,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 1. **Fetch the repository** into Carthage’s cache
 1. **Copy the right version** into Carthage/Checkouts
 
-^ Then, we just use `git checkout` to copy the repository files (but not the Git metadata) into the Checkouts folder of the project.
-
-^ There’s some more complexity here in practice (for example, Carthage checks out submodules too), but this is the way to think about the workflow.
+^ Then, we use `git checkout` to copy the repository files (without the Git metadata) into the project’s Carthage/Checkouts folder.
 
 ---
 
@@ -437,7 +435,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 1. **Symlink Carthage/Build** into the dependency folder
 
-^ Once every dependency has been downloaded, we first link all the Carthage/Build folders together. This ensures that any frameworks we build can be used by the later projects we build.
+^ Once every dependency has been downloaded, we link all the Carthage/Build folders together. This ensures that any frameworks we build can be used by the _later_ projects we build.
 
 ---
 
@@ -446,7 +444,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 1. **Symlink Carthage/Build** into the dependency folder
 1. **List framework schemes** from the `.xcodeproj`
 
-^ Then, in the root-most Xcode project, we use `xcodebuild -list` to find all schemes that build a dynamic framework. Static libraries, etc. are ignored.
+^ In the root-most Xcode project, we use `xcodebuild -list` to find all schemes that build a dynamic framework. Static libraries and other products are ignored.
 
 ---
 
@@ -456,7 +454,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 1. **List framework schemes** from the `.xcodeproj`
 1. **Build each scheme** for all supported architectures
 
-^ Now we can use `xcodebuild` to actually build. By looking at the target platform for the scheme, we can determine which architectures to build for.
+^ Now we can use `xcodebuild` to actually build. By looking at the target platform for the scheme, we determine which architectures to build for.
 
 ---
 
@@ -491,17 +489,17 @@ github "ReactiveCocoa/ReactiveCocoa"
 *** Downloading ReactiveCocoa at "v2.4.7"
 ```
 
-^ You may have noticed earlier that Carthage didn’t actually _build_ the dependencies listed in the Cartfile. That’s because each one of these projects has Releases on GitHub with binaries attached.
+^ You may have noticed earlier that Carthage didn’t actually _build_ the dependencies listed in the Cartfile. That’s because each of these projects have GitHub Releases with binaries attached.
 
-^ Whenever possible, Carthage will download binaries instead of building from scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%, from 9.5 minutes to about 3!
+^ When possible, Carthage will download binaries instead of building from scratch, saving you time. On GitHub for Mac, this cut build times by almost 70%, from 9.5 minutes to about 3!
 
 ---
 
 # CarthageKit
 
-^ Most of Carthage’s core behavior is actually implemented as a framework of its own, CarthageKit.
+^ Most of Carthage’s core behavior is actually implemented as a framework of its own, CarthageKit. This increases modularity and makes testing easier, but it’s also intended to make Carthage integration easier.
 
-^ This helps us provide modularity and makes testing easier, but it’s also intended to make Carthage integration easier. If you want to build a tool on top of Carthage, or compatible with Carthage, CarthageKit is your friend.
+^ If you want to build a tool on top of Carthage, or compatible with Carthage, CarthageKit is your friend. Using CarthageKit is a great way to add features without increasing the complexity of Carthage itself.
 
 ---
 
@@ -517,7 +515,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 * Better modularization
 * The Next Big Thing™
 
-^ Carthage and CarthageKit are written 100% in Swift. Although it definitely involves its share of obstacles, we saw huge benefits from using Swift instead of Objective-C. These are just some of them.
+^ Carthage and CarthageKit are written 100% in Swift. Although Swift definitely involves its share of obstacles, we saw huge benefits from using it instead of Objective-C. These are just some of them.
 
 ---
 
@@ -528,9 +526,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 * Simplifies shelling out, via [ReactiveTask](https://github.com/Carthage/ReactiveTask)
 * Carthage helps test RAC 3.0 in the real world
 
-^ In GitHub for Mac, we use RAC for everything because of how many different kinds of problems it can solve. Carthage is an especially great use for it, because of all the inherently stream-based stuff we need to do (like running shell tasks and networking).
+^ Carthage is an especially great use for RAC, because of all the inherently stream-based stuff we need to do (e.g., shell tasks and networking).
 
-^ Separately, we also wanted a way to test RAC’s Swift API (part of 3.0), in the real world, to make sure it works well and is pleasant to use. Carthage is probably the biggest user of it right now, and, as a result, RAC 3.0 is now getting close to a release.
+^ We also wanted a way to test RAC’s Swift API (part of 3.0) in the real world, to make sure it works well and is pleasant to use. Carthage is probably the biggest user of that API, and, as a result, RAC 3.0 is now getting close to a release.
 
 ---
 
@@ -542,16 +540,16 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # Per-project settings
 
-^ Carthage supports a few flags for changing the default workflow; for example, to only build for one platform, to add dependencies as submodules instead of copying their contents, or to skip the build step entirely.
+^ Carthage supports flags for changing the default workflow; for example, to only build for one platform, to add dependencies as submodules instead of copying their contents, or to skip the build step entirely.
 
-^ Right now, all of those flags need to be specified on the command line. Before 1.0, we want to support specifying them in Cartfile.private, so all users of the project follow the same configuration automatically.
+^ Right now, all of those flags need to be specified on the command line. By 1.0, we want to allow these options to live in Cartfile.private, so all users of the project follow the same configuration automatically.
 
 ---
 
 # Review CarthageKit API
 # Review command line flags
 
-^ The other major part of 1.0 will be carefully reviewing anything that we can’t really break after the release is out there, and making any breaking changes ahead of time.
+^ The other major part of 1.0 will be carefully reviewing anything that we can’t really break after release, and making any breaking changes necessary ahead of time.
 
 ^ CarthageKit and the CLI are the main public-facing components where we’ll have to maintain backwards compatibility.
 
@@ -559,7 +557,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # Profit!!! 💸
 
-^ 1.0 is really important to me, because it makes Carthage “real.” We have an 0.7 release to do, and then 1.0 is up right after that, so it shouldn’t be too long now. Keep an eye out!
+^ 1.0 is really important to me, and I know it will make Carthage more “real” to many folks. We have an 0.7 release to do, and then 1.0 is up right after that, so it shouldn’t be too long now. Keep an eye out!
 
 ---
 
@@ -570,7 +568,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 ^ So, to recap, we covered what Carthage is and how to use it, why we built it and what problem it’s solving, and how it works behind the scenes.
 
-^ Ultimately, we’ve just scratched the surface, but hopefully this talk has helped create a clear picture of the project and its goals, as well as the ways in which it’s both similar to and different from CocoaPods.
+^ Ultimately, we’ve just scratched the surface, but hopefully this talk has helped create a clear picture of the project and its goals, as well as how it’s similar to and different from CocoaPods.
 
 ---
 
@@ -582,5 +580,3 @@ Slides and notes, plus my demo project, are available at:
 Thanks to everyone who reviewed this presentation, and to Realm for inviting me to speak![^2]
 
 [^2]: :heart: Matt Diephouse, Rob Rix, Alan Rogers, Keith Duncan, Nacho Soto, Tom Brow, James Lawton, Arwa Jumkawala, JP Simard, Tim Anglade, Brendan Forster, Benjamin Encz, Robert Böhnke, and you!
-
-^ Does anyone have any questions about the talk, or about Carthage itself? Anything you would like me to clarify?
