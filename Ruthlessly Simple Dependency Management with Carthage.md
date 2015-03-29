@@ -100,7 +100,7 @@
 
 ^ As users, we were frustrated with CocoaPods’ control of the project setup process. We know how to set up Xcode projects, and the automated nature of it often took away our flexibility.
 
-^ Yet, if we were to disable that feature, we would be stuck manually adding and removing files as our dependencies get updated.
+^ CocoaPods does offer a `--no-integrate` option, which stops it from manipulating your own Xcode project/workspace, but you still have to use the generated Pods project. You don’t get the choice to integrate dependencies using their own Xcode projects, for example.
 
 ---
 
