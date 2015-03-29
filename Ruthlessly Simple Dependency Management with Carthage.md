@@ -60,7 +60,7 @@
 
 ---
 
-# [fit] Our Problem
+# [fit] _Our_ Problem
 
 ^ So that’s why dependency management is important in general. But why Carthage? What specific problem were we trying to solve?
 
