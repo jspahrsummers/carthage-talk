@@ -71,7 +71,7 @@
 
 ![](Resources/nested-submodules.png)
 
-^ For the longest time, GitHub for Mac imported dependencies exclusively through Git submodules and Xcode subprojects. This works well until your two or more of your dependencies have a shared dependency.
+^ For the longest time, GitHub for Mac imported dependencies exclusively through Git submodules and Xcode subprojects. This works well until two or more of your dependencies have a shared dependency.
 
 ---
 
@@ -139,20 +139,6 @@
 ^ We wanted a simple coordinator between Xcode and Git, plus a constraint solver for resolving dependency versions.
 
 ^ All the tool should do on its own is find the right version, and the rest should just be communicating with Xcode and Git.
-
----
-
-# Dynamic frameworks vs. static libraries
-
-- iOS 8+ only
-- Can include resources
-- Self-contained and ready-to-use
-- Avoid duplicate symbol errors
-- **Required for Swift**
-
-^ Carthage uses frameworks and not static libraries, because frameworks come with significant advantages—like being completely self-contained.
-
-^ Built frameworks can be distributed as-is, without any auxiliary files necessary, which is huge for the Carthage use case.
 
 ---
 
@@ -504,6 +490,20 @@ github "ReactiveCocoa/ReactiveCocoa"
 ---
 
 # [fit] Technical Choices
+
+---
+
+# Dynamic frameworks vs. static libraries
+
+- iOS 8+ only
+- Can include resources
+- Self-contained and ready-to-use
+- Avoid duplicate symbol errors
+- **Required for Swift**
+
+^ Carthage uses frameworks and not static libraries, because frameworks come with significant advantages—like being completely self-contained.
+
+^ Built frameworks can be distributed as-is, without any auxiliary files necessary, which is huge for the Carthage use case.
 
 ---
 
