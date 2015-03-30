@@ -1,3 +1,3 @@
 github "Mantle/Mantle" ~> 1.5
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2

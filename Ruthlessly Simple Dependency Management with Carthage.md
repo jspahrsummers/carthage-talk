@@ -152,7 +152,7 @@
 
 ```
 github "Mantle/Mantle" ~> 1.5
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 ```
 
@@ -291,7 +291,7 @@ $ carthage update
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 ```
 
 ^ Carthage files are written in a subset of the Ordered Graph Data Language, a dead simple language that’s useful for configuration files like this.
@@ -303,7 +303,7 @@ github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 ```
 
 **Determine the type of each dependency**
@@ -321,7 +321,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 ```
 
 **Determine the type of each dependency**
@@ -333,7 +333,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 **Parse any [Semantic Version](http://semver.org)**
 
 ```
-~> 2.4.7
+>= 2.4.7
 ```
 
 ^ Determine what the version number is, if any, and what it means: “equal to”, “compatible with”, or “at least”
@@ -342,9 +342,21 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
+```
+github "Mantle/Mantle" ~> 1.5
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
+github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
+```
 
 ^ Now we know the dependencies we want, so it’s time to create a directed acyclic graph representing the versions of and relationships between the dependencies.
+
+---
+
+# :recycle: Resolving
+
+**Create a graph** of the latest dependency versions
+
+![inline](Resources/resolving-1.pdf)
 
 ^ We start by trying the latest allowed version for every dependency. 99% of the time, this graph will become the final result.
 
@@ -352,8 +364,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
+**Insert dependency Cartfiles** into the graph
+
+![inline](Resources/resolving-2.pdf)
 
 ^ Now we need to go to each dependency’s repository _at the version we picked_, and look for a Cartfile there.
 
@@ -363,22 +376,21 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
-1. **If requirements conflict**, throw out the graph
+**If requirements conflict**, throw out the graph
+
+![inline](Resources/resolving-3.pdf)
 
 ^ Okay, now we have a graph with some possible versions locked in.
 
-^ But let’s say we picked version 2.0 for Foo, while Bar says that it must be version 1.x! When this happens, the graph is _inconsistent_ and must be thrown out, because we can’t satisfy that requirement with the version we proposed.
+^ Unfortunately, we picked ReactiveCocoa 3.0, while ReactiveCocoaLayout only allows 2.4.7! When this happens, the graph is _inconsistent_ and must be thrown out, because we can’t satisfy both at the same time.
 
 ---
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
-1. **If requirements conflict**, throw out the graph
-    - **Try a new graph** with the next possible version
+**Try a new graph** with the next possible version
+
+![inline](Resources/resolving-4.pdf)
 
 ^ If this happens, and the graph gets thrown out, we decrement one of the version numbers and start over.
 
@@ -386,11 +398,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
-1. **If requirements conflict**, throw out the graph
-    - **Try a new graph** with the next possible version
-1. **Repeat** until a valid graph is found
+**Repeat** until a valid graph is found
+
+![inline](Resources/resolving-5.pdf)
 
 ^ We keep doing that until we find a set of versions that are all compatible with each other.
 

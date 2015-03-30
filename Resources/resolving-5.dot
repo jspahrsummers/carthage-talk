@@ -1,0 +1,11 @@
+digraph dependencygraph {
+    center=1;
+    node [shape=box, style=rounded, color=black, fontcolor=black, height=0.45, fontsize=18, fontname=Helvetica];
+    edge [color=black];
+
+    Demo -> ReactiveCocoa [label=" 2.4.7 ", fontcolor=blue, color=blue];
+    Demo -> ReactiveCocoaLayout [label=" 0.5.2 "];
+    ReactiveCocoaLayout -> Archimedes [label=" 1.1.4 "];
+    ReactiveCocoaLayout -> ReactiveCocoa [label=" 2.4.7 ", fontcolor=blue, color=blue];
+    Demo -> Mantle [label=" 1.5.4 "];
+}
