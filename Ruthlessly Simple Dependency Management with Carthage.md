@@ -360,7 +360,7 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 
 ![inline](Resources/resolving-1.pdf)
 
-^ We start by trying the latest allowed version for every dependency. 99% of the time, this graph will become the final result.
+^ We start by trying the latest allowed version for every dependency. 99% of the time, these are the versions will end up in the final graph.
 
 ---
 
