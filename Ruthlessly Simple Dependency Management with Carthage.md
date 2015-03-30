@@ -342,6 +342,8 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
+_CarthageDemo/Cartfile:_
+
 ```
 github "Mantle/Mantle" ~> 1.5
 github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
