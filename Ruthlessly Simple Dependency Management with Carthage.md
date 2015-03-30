@@ -330,7 +330,7 @@ github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
 github "ReactiveCocoa/ReactiveCocoa"
 ```
 
-**Parse any version constraint**
+**Parse any [Semantic Version](http://semver.org)**
 
 ```
 ~> 2.4.7
