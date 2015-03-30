@@ -342,7 +342,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
+**Create a graph** of the latest dependency versions
+
+![inline](Resources/resolving-1.pdf)
 
 ^ Now we know the dependencies we want, so it’s time to create a directed acyclic graph representing the versions of and relationships between the dependencies.
 
@@ -352,8 +354,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
+**Insert dependency Cartfiles** into the graph
+
+![inline](Resources/resolving-2.pdf)
 
 ^ Now we need to go to each dependency’s repository _at the version we picked_, and look for a Cartfile there.
 
@@ -363,9 +366,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
-1. **If requirements conflict**, throw out the graph
+**If requirements conflict**, throw out the graph
+
+![inline](Resources/resolving-3.pdf)
 
 ^ Okay, now we have a graph with some possible versions locked in.
 
@@ -375,10 +378,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
-1. **If requirements conflict**, throw out the graph
-    - **Try a new graph** with the next possible version
+**Try a new graph** with the next possible version
+
+![inline](Resources/resolving-4.pdf)
 
 ^ If this happens, and the graph gets thrown out, we decrement one of the version numbers and start over.
 
@@ -386,11 +388,9 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
-1. **Create a graph** of the latest dependency versions
-1. **Insert dependency Cartfiles** into the graph
-1. **If requirements conflict**, throw out the graph
-    - **Try a new graph** with the next possible version
-1. **Repeat** until a valid graph is found
+**Repeat** until a valid graph is found
+
+![inline](Resources/resolving-5.pdf)
 
 ^ We keep doing that until we find a set of versions that are all compatible with each other.
 
