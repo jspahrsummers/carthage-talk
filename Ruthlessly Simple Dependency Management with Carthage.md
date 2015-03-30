@@ -382,7 +382,7 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 
 ^ Okay, now we have a graph with some possible versions locked in.
 
-^ But let’s say we picked version 2.0 for Foo, while Bar says that it must be version 1.x! When this happens, the graph is _inconsistent_ and must be thrown out, because we can’t satisfy that requirement with the version we proposed.
+^ Unfortunately, we picked ReactiveCocoa 3.0, while ReactiveCocoaLayout only allows 2.4.7! When this happens, the graph is _inconsistent_ and must be thrown out, because we can’t satisfy both at the same time.
 
 ---
 
