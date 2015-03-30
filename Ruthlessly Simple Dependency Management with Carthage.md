@@ -152,7 +152,7 @@
 
 ```
 github "Mantle/Mantle" ~> 1.5
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 ```
 
@@ -291,7 +291,7 @@ $ carthage update
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 ```
 
 ^ Carthage files are written in a subset of the Ordered Graph Data Language, a dead simple language that’s useful for configuration files like this.
@@ -303,7 +303,7 @@ github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 ```
 
 **Determine the type of each dependency**
@@ -321,7 +321,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 **Parse [OGDL](http://www.ogdl.org) into a list of dependencies**
 
 ```
-github "ReactiveCocoa/ReactiveCocoa" ~> 2.4.7
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
 ```
 
 **Determine the type of each dependency**
@@ -333,7 +333,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 **Parse any [Semantic Version](http://semver.org)**
 
 ```
-~> 2.4.7
+>= 2.4.7
 ```
 
 ^ Determine what the version number is, if any, and what it means: “equal to”, “compatible with”, or “at least”
@@ -342,11 +342,21 @@ github "ReactiveCocoa/ReactiveCocoa"
 
 # :recycle: Resolving
 
+```
+github "Mantle/Mantle" ~> 1.5
+github "ReactiveCocoa/ReactiveCocoa" >= 2.4.7
+github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
+```
+
+^ Now we know the dependencies we want, so it’s time to create a directed acyclic graph representing the versions of and relationships between the dependencies.
+
+---
+
+# :recycle: Resolving
+
 **Create a graph** of the latest dependency versions
 
 ![inline](Resources/resolving-1.pdf)
-
-^ Now we know the dependencies we want, so it’s time to create a directed acyclic graph representing the versions of and relationships between the dependencies.
 
 ^ We start by trying the latest allowed version for every dependency. 99% of the time, this graph will become the final result.
 
