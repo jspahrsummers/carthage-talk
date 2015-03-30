@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export SCRIPT_DIR=$(dirname "$0")
+
+find "$SCRIPT_DIR" -name "*.dot" | while read line
+do
+    dot -Tpdf "$line" > "${line%dot}pdf"
+done
