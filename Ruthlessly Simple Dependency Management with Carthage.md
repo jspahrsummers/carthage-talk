@@ -5,9 +5,9 @@
 
 ![fit](Resources/carthage-logo-gray.png)
 
-^ (logo by Reda Lemeden)
-
 ^ Carthage is a dependency manager, intended to be simplest way to add frameworks to your Cocoa project. Carthage is also the first dependency manager to officially support Swift, and is written completely in Swift itself.
+
+^ (logo by Reda Lemeden)
 
 ---
 
