@@ -539,7 +539,7 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 * Simplifies shelling out, via [ReactiveTask](https://github.com/Carthage/ReactiveTask)
 * Carthage helps test RAC 3.0 in the real world
 
-^ Carthage is an especially great use for RAC, because of all the inherently stream-based stuff we need to do (e.g., shell tasks and networking).
+^ ReactiveCocoa is a framework for programming with “streams of values over time,” which are known as signals. We use ReactiveCocoa extensively in Carthage, which turns out to be an especially great application for it, because of all the inherently stream-based stuff we need to do (like shell tasks and networking).
 
 ^ We also wanted a way to test RAC’s Swift API (part of 3.0) in the real world, to make sure it works well and is pleasant to use. Carthage is probably the biggest user of that API, and, as a result, RAC 3.0 is now getting close to a release.
 
