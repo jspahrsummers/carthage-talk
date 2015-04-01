@@ -492,7 +492,7 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 
 ---
 
-# CarthageKit
+# [fit] CarthageKit
 
 ^ Most of Carthage’s core behavior is actually implemented as a framework of its own, CarthageKit. This increases modularity and makes testing easier, but it’s also intended to make Carthage integration easier.
 
