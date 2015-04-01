@@ -194,7 +194,9 @@ $ carthage update
 
 ![inline](Resources/run-script-phase.png)
 
-^ Because of an App Store submission bug that disallows universal framework binaries, we need to add a build script to remove them. I’m hoping that Apple eventually fixes my radar and makes this step unnecessary.
+^ Unfortunately, there’s an App Store submission bug that disallows universal framework binaries, but Carthage offers a command to automatically remove the simulator bits. We can run that command from a Run Script build phase.
+
+^ I’m hoping that Apple eventually fixes my radar and makes this step unnecessary.
 
 ---
 
