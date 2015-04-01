@@ -236,19 +236,16 @@ $ carthage update
 
 ---
 
-# Easier to _maintain_
-
-^ By keeping things simple, we don’t need to handle as many edge cases. And by integrating with other tools, like Xcode and Git, we delegate responsibility to them, resulting in less code within Carthage.
-
----
-
 # Easier to _understand_
 
 ^ Simplicity makes it easier to form a mental model of what’s going on. If something goes wrong, understanding what the tool does may help you resolve the issue.
 
 ---
 
+# Easier to _maintain_
 # Easier to _contribute_ to
+
+^ By keeping things simple, we don’t need to handle as many edge cases. And by integrating with other tools, like Xcode and Git, we delegate responsibility to them, resulting in less code (and less complexity) within Carthage.
 
 ^ It’s a lot easier to implement fixes or new features within a simple codebase than a complex one.
 
