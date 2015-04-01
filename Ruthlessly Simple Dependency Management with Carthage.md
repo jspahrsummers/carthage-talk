@@ -202,7 +202,7 @@ $ carthage update
 
 # That’s it!
 
-^ We now have an app using all of those frameworks. Others using that project can get the same frameworks by running `carthage bootstrap`, and it’s easy to update them in the future by running `carthage update` again.
+^ We now have an app using all of those frameworks. Others using that project can get the same frameworks by running `carthage bootstrap`, and it’s easy to update to newer versions in the future by running `carthage update` again.
 
 ---
 
