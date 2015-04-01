@@ -5,11 +5,11 @@ digraph dependencygraph {
     node [shape=box, style=rounded, color=white, fontcolor=white, height=0.45, fontsize=18, fontname=Helvetica];
     edge [color=white];
 
-    Application -> Mantle;
-    Application -> Squirrel -> Mantle;
-    Application -> OctoKit -> ReactiveCocoa;
-    Application -> ReactiveCocoa;
-    Application -> ReactiveViewModel -> ReactiveCocoa;
+    "GitHub for Mac" -> Mantle;
+    "GitHub for Mac" -> Squirrel -> Mantle;
+    "GitHub for Mac" -> OctoKit -> ReactiveCocoa;
+    "GitHub for Mac" -> ReactiveCocoa;
+    "GitHub for Mac" -> ReactiveViewModel -> ReactiveCocoa;
     OctoKit -> Mantle;
     Squirrel -> ReactiveCocoa;
 }
