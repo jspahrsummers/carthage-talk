@@ -259,7 +259,7 @@ $ carthage update
 
 ^ It’s impossible for us to predict all the possible ways that someone might want to use our software.
 
-^ If there’s a use case out there that we’re not anticipating, it’s a lot easier to bend our simpler tool to your will than to convince a complex tool to do exactly what you want.
+^ If there’s a use case out there that we’re not anticipating, it’s a lot easier to bend Carthage to your will than to convince a complex tool to do exactly what you want.
 
 ---
 
