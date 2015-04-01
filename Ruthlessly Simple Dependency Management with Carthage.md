@@ -581,7 +581,7 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 
 ^ So, to recap, we covered what Carthage is and how to use it, why we built it and what problem it’s solving, and how it works behind the scenes.
 
-^ Ultimately, we’ve just scratched the surface, but hopefully this talk has helped create a clear picture of the project and its goals, as well as how it’s similar to and different from CocoaPods.
+^ Ultimately, we’ve just scratched the surface, but hopefully this has helped create a clear picture of the project and its goals, as well as the ways in which it’s similar to and different from CocoaPods.
 
 ---
 
