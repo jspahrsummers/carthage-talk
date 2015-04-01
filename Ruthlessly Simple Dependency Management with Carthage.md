@@ -502,6 +502,8 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 
 # [fit] Technical Choices
 
+^ I’d also like to explain just a few of the technical choices we made while building Carthage.
+
 ---
 
 # Dynamic frameworks vs. static libraries
