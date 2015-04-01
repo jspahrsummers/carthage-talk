@@ -335,7 +335,7 @@ github "ReactiveCocoa/ReactiveCocoa"
 >= 2.4.7
 ```
 
-^ Determine what the version number is, if any, and what it means: “equal to”, “compatible with”, or “at least”
+^ Determine what the version number is, if any, and what it means: “equal to”, “compatible with”, or “at least.” If there’s no version number, it means “pick latest.”
 
 ---
 
