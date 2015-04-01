@@ -405,7 +405,7 @@ github "ReactiveCocoa/ReactiveCocoaLayout" == 0.5.2
 
 ^ We keep doing that until we find a set of versions that are all compatible with each other.
 
-^ This is highly inefficient in the worst case, but performs surprisingly well in practice. Part of it is because we throw out graphs the moment they become invalid, and part of it is because we automatically terminate when we find the first valid solution.
+^ This is inefficient in the worst case, but performs surprisingly well in practice. Part of it is because we throw out graphs the moment they become invalid, and part of it is because we automatically terminate when we find the first valid solution.
 
 ---
 
